@@ -134,3 +134,7 @@ ol.list-group {
 .panel .list-group .list-group-item {
     border-left: solid 4px #FFF;
 }
+
+.styles {
+    margin:10px 0;
+}
