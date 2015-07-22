@@ -17,6 +17,10 @@ In this tutorial, you create a Mortgage Calculator with amortization table using
 - Promises
 - Using Browserify and Babelify
 
+## Solutions
+
+Unit-by-unit solutions are available in the [es6-tutorial-solutions](https://github.com/ccoenraets/es6-tutorial-solutions) repository. 
+
 ## Companion Slides
 
 For a quick introduction to key ECMAScript features, check out [these slides](http://coenraets.org/present/es6).

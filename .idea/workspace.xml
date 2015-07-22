@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8cc97c66-ac18-4ed5-aeaa-63cffe5a96de" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Gemfile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Gemfile.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/app/calc-bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/app/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/app/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/app/styles.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceCodePro-Black.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceCodePro-Bold.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceCodePro-ExtraLight.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceCodePro-Light.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceCodePro-Regular.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceCodePro-Semibold.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-Black.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-BlackIt.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-Bold.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-BoldIt.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-ExtraLight.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-ExtraLightIt.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-It.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-Light.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-LightIt.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-Regular.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-Semibold.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/font/SourceSansPro-SemiboldIt.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/main.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/styles.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/css/syntax.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/ecmascript-arrow-functions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/ecmascript-classes.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/ecmascript-destructuring.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/ecmascript-let.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/ecmascript-modules.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/ecmascript-promises.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/ecmascript-template-strings.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/api.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/app-layout.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/app-map.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/app-map.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/app-preview.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/app-preview.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/app-v2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/app-v3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/app-v4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/app-v5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/application-update-preview.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/component-controller.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/component-helper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/component-style.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/devconsole.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/enable-lightning.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/icon-github.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/js.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/lightning-component-tab.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/lightning-resources.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/lightning.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/mobile_nav.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/new-field.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/oneapp.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/s1menu.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/salesforce-dev-workshop-jumbo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/search-schema.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/searchbar-style.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/setup.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/sf1_lightning.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/static-resource.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/unit01.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/unit02-error.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/unit03.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/unit04.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/unit05.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/version1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/version2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/version3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/version4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/version5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/images/version6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/lib/jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/next.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/npm-debug.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/setup-environment.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceCodePro-Black.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceCodePro-Bold.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceCodePro-ExtraLight.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceCodePro-Light.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceCodePro-Regular.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceCodePro-Semibold.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-Black.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-BlackIt.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-Bold.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-BoldIt.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-ExtraLight.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-ExtraLightIt.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-It.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-Light.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-LightIt.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-Regular.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-Semibold.otf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/font/SourceSansPro-SemiboldIt.otf" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.md" afterPath="$PROJECT_DIR$/index.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styles.css" afterPath="$PROJECT_DIR$/css/styles.css" />
+    </list>
+    <ignored path="es6-tutorial.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="es6-tutorial" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="icon-github.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/icon-github.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="js.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/js.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unit01.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/unit01.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unit02-error.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/unit02-error.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unit03.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/unit03.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unit04.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/unit04.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unit05.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/images/unit05.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.862069">
+              <caret line="21" column="133" selection-start-line="21" selection-start-column="133" selection-end-line="21" selection-end-column="133" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/css/styles.css" />
+        <option value="$PROJECT_DIR$/index.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="NamedScopeManager">
+    <order />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1905" />
+    <option name="y" value="-261" />
+    <option name="width" value="1278" />
+    <option name="height" value="873" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="es6-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="es6-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="es6-tutorial" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
+      <setting name="configLocationType" value="CONFIG_FILE" />
+      <setting name="settingsFile" value="" />
+      <setting name="serverType" value="INTERNAL" />
+      <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8cc97c66-ac18-4ed5-aeaa-63cffe5a96de" name="Default" comment="" />
+      <created>1437576736740</created>
+      <option name="number" value="Default" />
+      <updated>1437576736740</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1905" y="-261" width="1278" height="873" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24960877" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/images/icon-github.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/js.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/unit01.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/unit02-error.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/unit03.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/unit04.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/unit05.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.862069">
+          <caret line="21" column="133" selection-start-line="21" selection-start-column="133" selection-end-line="21" selection-end-column="133" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
