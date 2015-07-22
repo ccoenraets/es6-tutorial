@@ -1,0 +1,120 @@
+input[type=text] {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 24px;
+    padding: 3px 8px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+button {
+    -webkit-appearance: button;
+    color: #333;
+    background-color: #DDD;
+    border-color: #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+}
+
+button:hover {
+    background: none repeat scroll 0 0 #CCC;
+}
+
+button:active {
+    background: none repeat scroll 0 0 #BBB;
+}
+
+button:focus {
+    outline:0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    text-align: right;
+    padding: 0 .5rem;
+}
+
+
+th,
+td {
+    border: solid 1px #EEEEEE !important;
+    padding: 1px 4px;
+}
+
+label {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+}
+
+.content {
+    padding: 20px;
+}
+
+.bar {
+    display: inline-block;
+    border: none;
+    height: 8px;
+}
+
+.bar.principal {
+    background-color: rgb(166, 197, 103);
+    margin-right:.5px;
+}
+
+.bar.interest {
+    background-color: rgb(252, 187, 105);
+    margin-left:.5px;
+}
+
+.stretch {
+    width: 100%;
+    padding-left:0;
+    padding-right:0;
+}
+
+.flex {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.currency::before {
+    content:"$";
+}
+
+.left {
+    text-align: left;
+}
+
+.form > div {
+    margin: 6px 0;
+}
+
+.form button {
+    margin: 8px 0;
+    margin-left: 84px;
+}
