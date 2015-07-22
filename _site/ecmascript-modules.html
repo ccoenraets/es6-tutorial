@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+
+    <title>ECMAScript 6 Tutorial</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href='app/styles.css' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/syntax.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-721308-2', 'ccoenraets.github.io');
+      ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">ECMAScript 6 Tutorial</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a
+                        href="https://github.com/ccoenraets/salesforce-developer-workshop"><img
+                        src="images/icon-github.png" style="border: none;margin: -4px 0;height: 28px;width: 28px;"/>
+                    GitHub
+                    Project</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+
+<div class="container">
+
+<div class="row">
+
+    <div class="col-xs-12 col-sm-9">
+        <!--<hr/>-->
+        <h1>Unit 6: Modules</h1>
+
+<p>Modules have been available in JavaScript through third-party libraries. ECMAScript 6 adds native support for modules to JavaScript. ECMAScript 6 modules are inspired by both AMD and CommonJS modules. </p>
+
+<p>In this unit, you create a module that exposes the business logic related to a mortgage.</p>
+
+<h2>Step 1: Create the Module</h2>
+
+<ol>
+<li><p>In the <strong>es6-tutorial</strong> directory, create a new directory named <strong>modules</strong>.</p></li>
+<li><p>In the new <strong>modules</strong> directory, create a new file named <strong>mortgage.js</strong>. </p></li>
+<li><p>Copy the <code>calculateMonthlyPayment</code> and <code>calculateAmortization</code> functions from <strong>calc.js</strong> into <strong>mortgage.js</strong>.</p></li>
+<li><p>Add the <code>export</code> keyword in front of both functions to make them available as part of the module public API. <strong>mortgage.js</strong> should now look like this: </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">export let calculateMonthlyPayment = (principal, years, rate) =&gt; {
+    let monthlyRate = 0;
+    if (rate) {
+        monthlyRate = rate / 100 / 12;
+    }
+    let monthlyPayment = principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate),
+            years * 12)));
+    return {principal, years, rate, monthlyPayment, monthlyRate};
+};
+
+export let calculateAmortization = (principal, years, rate) =&gt; {
+    let {monthlyRate, monthlyPayment} = calculateMonthlyPayment(principal, years, rate);
+    let balance = principal;
+    let amortization = [];
+    for (let y=0; y&lt;years; y++) {
+        let interestY = 0;  //Interest payment for year y
+        let principalY = 0; //Principal payment for year y
+        for (let m=0; m&lt;12; m++) {
+            let interestM = balance * monthlyRate;       //Interest payment for month m
+            let principalM = monthlyPayment - interestM; //Principal payment for month m
+            interestY = interestY + interestM;
+            principalY = principalY + principalM;
+            balance = balance - principalM;
+        }
+        amortization.push({principalY, interestY, balance});
+    }
+    return {monthlyPayment, monthlyRate, amortization};
+};
+</code></pre></div></li>
+</ol>
+
+<h2>Step 2: Use the Module</h2>
+
+<ol>
+<li><p>In <strong>calc.js</strong>, remove the <code>calculateMonthlyPayment</code> and <code>calculateAmortization</code> functions.</p></li>
+<li><p>Import the mortgage module. Add the following <code>import</code> statement as the first line in <strong>calc.js</strong>:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">import * as mortgage from &#39;./modules/mortgage&#39;;
+</code></pre></div></li>
+<li><p>In the <strong>calcBtn</strong> click event handler, modify the invocation of the <code>calculateAmortization</code> function as follows:    </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">let {monthlyPayment, monthlyRate, amortization} = 
+    mortgage.calculateAmortization(principal, years, rate);
+</code></pre></div></li>
+</ol>
+
+<h2>Step 3: Build the Project</h2>
+
+<p>When you transpile an application, you are creating an ECMAScript 5-compatible version of an ECMAScript 6 application. If your application uses modules, the transpiler relies on a third party library to implement modules in ECMAScript 5. <a href="http://browserify.org/">Browserify</a> and <a href="http://webpack.github.io/">Webpack</a> are two popular options, and Babel supports both (and others). We use Browserify in this tutorial.</p>
+
+<ol>
+<li><p>On the command line, make sure you are in the <strong>es6-tutorial</strong> directory and install the <strong>browserify</strong> and <strong>babelify</strong> modules:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">npm install browserify babelify --save-dev
+</code></pre></div></li>
+<li><p>In your code editor, open <strong>package.json</strong> and add a <strong>build-calc-modular</strong> script (right after the <strong>build-calc</strong> script). The scripts section of package.json should now look like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&quot;scripts&quot;: {
+    &quot;start&quot;: &quot;http-server&quot;,
+    &quot;build-calc&quot;: &quot;babel calc.js -o calc-bundle.js&quot;,
+    &quot;build-calc-modular&quot;: &quot;browserify calc.js -t babelify -o calc-bundle.js&quot;,
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;
+},
+</code></pre></div>
+<blockquote>
+<p>We use this simple local installation and npm build approach in this tutorial, but depending on your overall development and build environment you may prefer a different option to install and run Browserify. </p>
+</blockquote></li>
+<li><p>On the command line, make sure you are in the <strong>es6-tutorial</strong> directory and type the following command:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text"> npm run build-calc-modular
+</code></pre></div></li>
+<li><p>In your code editor, open index.html. Remove the two existing <code>script</code> tags and replace them with the following:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">&lt;script src=&quot;calc-bundle.js&quot;&gt;&lt;/script&gt;
+</code></pre></div></li>
+<li><p>Test the application: Access <a href="http://localhost:8080">http://localhost:8080</a>, and click the <strong>Calculate</strong> button.</p></li>
+</ol>
+
+<h2>Additional Resources</h2>
+
+<ul>
+<li><a href="http://www.2ality.com/2014/09/es6-modules-final.html">2ality: ECMAScript 6 modules: the final syntax</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">MDN: import</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export">MDN: export</a></li>
+</ul>
+
+<div class="row" style="margin-top:40px;">
+<div class="col-sm-12">
+<a href="ecmascript-template-strings.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="ecmascript-classes.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+</div>
+
+<p></div></p>
+
+
+
+        <!--<div class="row" style="margin-top: 30px;">-->
+            <!--<div class="col-xs-12">-->
+                <!--<div id="disqus_thread"></div>-->
+                <!--<script type="text/javascript">-->
+                    <!--/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */-->
+                    <!--var disqus_shortname = 'salesforcelightningtutorial'; // required: replace example with your forum shortname-->
+
+                    <!--/* * * DON'T EDIT BELOW THIS LINE * * */-->
+                    <!--(function() {-->
+                        <!--var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;-->
+                        <!--dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';-->
+                        <!--(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);-->
+                    <!--})();-->
+                <!--</script>-->
+                <!--<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+                <!--<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+    </div>
+
+    <div class="col-xs-12 col-sm-3 right-nav">
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading" style="font-variant:small-caps;font-size: 18px;">units</div>
+            <ol class="list-group">
+                <li><a href="setup-environment.html" class="list-group-item">Set Up Your Environment</a></li>
+                <li><a href="ecmascript-let.html" class="list-group-item">let variables</a></li>
+                <li><a href="ecmascript-destructuring.html" class="list-group-item">Destructuring</a></li>
+                <li><a href="ecmascript-arrow-functions.html" class="list-group-item">Arrow Functions</a></li>
+                <li><a href="ecmascript-template-strings.html" class="list-group-item">Template Strings</a></li>
+                <li><a href="ecmascript-modules.html" class="list-group-item">Modules</a></li>
+                <li><a href="ecmascript-classes.html" class="list-group-item">Classes</a></li>
+                <li><a href="ecmascript-promises.html" class="list-group-item">Promises</a></li>
+                <li><a href="next.html" class="list-group-item">Next Steps</a></li>
+            </ol>
+        </div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-url="http://ccoenraets/github.io/es6-tutorial" data-text="New ECMAScript 6 Tutorial">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+    </div>
+
+</div>
+
+</div>
+
+<div class="container">
+    <div id="footer">
+        <p class="text-muted">by Christophe Coenraets. Developer Advocate, Salesforce</p>
+        <a class="twitter-follow-button"
+           href="https://twitter.com/ccoenraets"
+           data-size="large">
+            Follow @ccoenraets</a>
+
+    </div>    <!-- Site footer -->
+</div>
+
+
+<script src="lib/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="app/calc-bundle.js"></script>
+
+</body>
+</html>

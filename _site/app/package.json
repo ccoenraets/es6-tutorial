@@ -1,0 +1,22 @@
+{
+  "name": "es6-tutorial",
+  "version": "1.0.0",
+  "description": "ECMAScript 6 Tutorial",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server",
+    "build-calc": "babel calc.js -o calc-bundle.js",
+    "build-calc-modular": "browserify calc.js -t babelify -o calc-bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christophe Coenraets <ccoenraets@gmail.com> (http://coenraets.org/)",
+  "license": "ISC",
+  "repository": "https://gitub.com/ccoenraets/es6-tutorial",
+  "devDependencies": {
+    "babel": "^5.6.23",
+    "babel-core": "^5.7.4",
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.0",
+    "http-server": "^0.8.0"
+  }
+}

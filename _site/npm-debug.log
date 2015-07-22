@@ -1,0 +1,18 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose stack Error: ENOENT, open '/Users/ccoenraets/Projects/package.json'
+4 verbose stack     at Error (native)
+5 verbose cwd /Users/ccoenraets/Projects/es2015-tutorial
+6 error Darwin 14.3.0
+7 error argv "node" "/usr/local/bin/npm" "start"
+8 error node v0.12.7
+9 error npm  v2.11.3
+10 error path /Users/ccoenraets/Projects/package.json
+11 error code ENOENT
+12 error errno -2
+13 error enoent ENOENT, open '/Users/ccoenraets/Projects/package.json'
+13 error enoent This is most likely not a problem with npm itself
+13 error enoent and is related to npm not being able to find a file.
+14 verbose exit [ -2, true ]

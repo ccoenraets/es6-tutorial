@@ -1,0 +1,61 @@
+{% include bootstrap-header.html %}
+
+<div class="container">
+
+<div class="row">
+
+    <div class="col-xs-12 col-sm-9">
+        <!--<hr/>-->
+        {{ content }}
+
+
+        <!--<div class="row" style="margin-top: 30px;">-->
+            <!--<div class="col-xs-12">-->
+                <!--<div id="disqus_thread"></div>-->
+                <!--<script type="text/javascript">-->
+                    <!--/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */-->
+                    <!--var disqus_shortname = 'salesforcelightningtutorial'; // required: replace example with your forum shortname-->
+
+                    <!--/* * * DON'T EDIT BELOW THIS LINE * * */-->
+                    <!--(function() {-->
+                        <!--var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;-->
+                        <!--dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';-->
+                        <!--(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);-->
+                    <!--})();-->
+                <!--</script>-->
+                <!--<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>-->
+                <!--<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+    </div>
+
+    <div class="col-xs-12 col-sm-3 right-nav">
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading" style="font-variant:small-caps;font-size: 18px;">units</div>
+            <ol class="list-group">
+                <li><a href="setup-environment.html" class="list-group-item">Set Up Your Environment</a></li>
+                <li><a href="ecmascript-let.html" class="list-group-item">let variables</a></li>
+                <li><a href="ecmascript-destructuring.html" class="list-group-item">Destructuring</a></li>
+                <li><a href="ecmascript-arrow-functions.html" class="list-group-item">Arrow Functions</a></li>
+                <li><a href="ecmascript-template-strings.html" class="list-group-item">Template Strings</a></li>
+                <li><a href="ecmascript-modules.html" class="list-group-item">Modules</a></li>
+                <li><a href="ecmascript-classes.html" class="list-group-item">Classes</a></li>
+                <li><a href="ecmascript-promises.html" class="list-group-item">Promises</a></li>
+                <li><a href="next.html" class="list-group-item">Next Steps</a></li>
+            </ol>
+        </div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-url="http://ccoenraets/github.io/es6-tutorial" data-text="New ECMAScript 6 Tutorial">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+
+    </div>
+
+</div>
+
+</div>
+
+{% include bootstrap-footer.html %}
