@@ -1,9 +1,9 @@
 ---
 layout: home
-title: Salesforce Developer Workshop
+title: ECMAScript 6 Tutorial
 ---
 
-In this tutorial, you create a Mortgage Calculator with amortization table using the new ECMAScript 6 features. You use [Babel](http://babeljs.io/) to transpile the ECMAScript 6 application and use it in current browsers.
+In this tutorial, you create a Mortgage Calculator with amortization table using many of the new ECMAScript 6 features. You use [Babel](http://babeljs.io/) to transpile the ECMAScript 6 application and use it in current browsers.
 
 ## Topics
 
