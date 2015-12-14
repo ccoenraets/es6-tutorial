@@ -5,11 +5,11 @@ layout: module
 
 ECMAScript 6 introduces new syntax that makes it easy to create objects based on variables. Conversely, the new object and array destructuring syntax makes it easy to create variables based on objects and arrays. 
 
-In this unit, you modify the ```calculateMonthlyPayment``` function to return multiple values: the monthly payment, the monthly rate, and the other mortgage parameters. The new ECMAScript 6 object creation and destructuring syntax makes it easy to implement this change.
+In this unit, you modify the calculateMonthlyPayment function to return multiple values: the monthly payment, the monthly rate, and the other mortgage parameters. The new ECMAScript 6 object creation and destructuring syntax makes it easy to implement this change.
 
 ## Step 1: Creating Objects from Variables
 
-1. Open **calc.js** in your code editor. 
+1. Open `main.js` in your code editor. 
 
 1. Modify the return statement of the ```calculateMonthlyPayment``` function as follows:
 
@@ -37,7 +37,7 @@ In this unit, you modify the ```calculateMonthlyPayment``` function to return mu
     <h3>Monthly Rate: <span id="monthlyRate" class="currency"></span></h3>
     ```
 
-1. Open **calc.js**. In the **calcBtn** click event handler, modify the invocation of ```calculateMonthlyPayment``` as follows:
+1. Open `main.js`. In the **calcBtn** click event handler, modify the call to ```calculateMonthlyPayment``` as follows:
 
     ```   
     let {monthlyPayment, monthlyRate} = calculateMonthlyPayment(principal, years, rate);
@@ -57,7 +57,15 @@ In this unit, you modify the ```calculateMonthlyPayment``` function to return mu
     document.getElementById("monthlyRate").innerHTML = (monthlyRate * 100).toFixed(2);
     ```
 
-1. Test the application: Access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
+## Step 3: Build and Run
+
+1. On the command line, type the following command to rebuild the application:
+
+    ```
+    npm run babel
+    ```
+
+1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
 
     ![](images/unit03.jpg)
     

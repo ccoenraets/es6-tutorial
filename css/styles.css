@@ -42,7 +42,7 @@ blockquote {
     margin-top: -20px;
     padding-bottom: 0px;
     padding-top: 0px;
-    background-color: #F7DF1E;
+    /*background-color: #F7DF1E;*/
     color: #000;
 }
 
@@ -54,17 +54,17 @@ blockquote {
 
 .navbar {
     font-family: "Open Sans";
-    background-color: #F7DF1E;
-    border-color: #F7DF1E;
+    background-color: #fcfcfc;
+    /*border-color: #F7DF1E;*/
 }
 
 .navbar-default .navbar-nav>li>a,
 .navbar-default .navbar-brand {
-    color: #000;
+    /*color: #000;*/
 }
 
 .navbar-brand {
-    font-size: 22px;
+    /*font-size: 22px;*/
 }
 
 h3 {
@@ -124,6 +124,8 @@ ol.list-group {
 
 .panel {
     border-radius: 2px;
+    border: none;
+    border-left: solid 1px #FEFEFE;
 }
 
 .panel .list-group .list-group-item:hover {

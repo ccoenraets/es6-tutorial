@@ -3,19 +3,19 @@ layout: home
 title: ECMAScript 6 Tutorial
 ---
 
-In this tutorial, you create a Mortgage Calculator with amortization table using many of the new ECMAScript 6 features. You use [Babel](http://babeljs.io/) to transpile the ECMAScript 6 application and use it in current browsers.
+In this tutorial, you create a Mortgage Calculator with amortization table using many of the new ECMAScript 6 / ECMAScript 2015 features. You use [Babel](http://babeljs.io/) and [Webpack](https://webpack.github.io/) to transpile the ECMAScript 6 application and run it in current browsers.
 
 ## Topics
 
-- Using Babel to run ECMAScript 6 apps in current browsers
-- let variables
-- Object and Array Destructuring
-- Arrow Functions
-- Template Strings
-- Modules
-- Classes
-- Promises
-- Using Browserify and Babelify
+- Setting Up Babel to run ECMAScript 6 apps in current browsers
+- Using let variables
+- Using Object and Array Destructuring
+- Using Arrow Functions
+- Using Template Strings
+- Setting Up Webpack
+- Using Modules
+- Using Classes
+- Using Promises
 
 ## Solutions
 

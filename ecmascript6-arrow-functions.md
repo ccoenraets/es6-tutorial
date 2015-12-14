@@ -9,7 +9,7 @@ In this unit, you add a new function to calculate the mortgage amortization. You
  
 ## Steps
 
-1. Open **calc.js**. Right after the ```calculateMonthlyPayment``` function, add a ```calculateAmortization``` function defined as follows:
+1. Open `main.js`. Right after the ```calculateMonthlyPayment``` function, add a ```calculateAmortization``` function defined as follows:
 
     ```
     let calculateAmortization = (principal, years, rate) => {
@@ -71,8 +71,14 @@ In this unit, you add a new function to calculate the mortgage amortization. You
     	amortization.forEach(month => console.log(month));
     });
     ```
+    
+1. On the command line, type the following command to rebuild the application:
+    
+    ```
+    npm run babel
+    ```
 
-1. Test the application: Access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button. Open the developer console: you should see the amortization values in the console log.
+1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button. Open the developer console: you should see the amortization values in the console log.
 
     ![](images/unit04.jpg)
 

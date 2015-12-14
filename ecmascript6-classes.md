@@ -9,9 +9,9 @@ In this unit, you create an alternative implementation of the mortgage calculato
  
 ## Part 1: Using a Class
 
-1. Since this is an alternative implementation rather than the logical continuation of the previous implementation, make a copy of **index.html** and **calc.js** in case you want to go back to that version.
+1. Since this is an alternative implementation rather than the logical continuation of the previous implementation, make a copy of `index.html` and `main.js` in case you want to go back to that version.
 
-1. Open **calc.js**. Remove the ```import``` statement at the top of the file.
+1. In `main.js`, remove the ```import``` statement at the top of the file.
 
 1. Add the following class definition at the top of file:
 
@@ -86,24 +86,24 @@ In this unit, you create an alternative implementation of the mortgage calculato
     });
     ```
     
-1. Build the project. On the command line, make sure you are in the **es6-tutorial** directory and type the following command:
-                            
-    ```
-     npm run build-calc
-    ```
-   	
-1. Test the application: Access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
+1. On the command line, type the following command to rebuild the application:
+
+	```
+    npm run webpack
+	```
+
+1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.	
 
 
 ## Part 2: Using Classes in Modules
 
 To create the module:
 
-1. In the **modules** directory, create a new file named **mortgage2.js** 
+1. Create a new file named `mortgage2.js` in the `js` directory. 
  
-1. Copy the **Mortgage** class definition from calc.js into **mortgage2.js**
+1. Copy the `Mortgage` class definition from `main.js` into `mortgage2.js`.
  
-1. Add the ```export default``` keywords in front of the class definition. **mortgage2.js** should now look like this: 
+1. Add the ```export default``` keywords in front of the class definition. `mortgage2.js` should now look like this: 
 
     ```
     export default class Mortgage {
@@ -145,23 +145,23 @@ To create the module:
 
 To use the module:
 
-1. In **calc.js**, delete the Mortgage class definition.
+1. In `main.js`, remove the Mortgage class definition.
 
-1. Import the mortgage module. Add the following ```import``` statement as the first line in calc.js:
+1. Import the mortgage module. Add the following ```import``` statement as the first line in main.js:
 
 	```
-	import Mortgage from './modules/mortgage2';
+	import Mortgage from './mortgage2';
 	```
 	
 To build the project:
 
-1. On the command line, make sure you are in the **es6-tutorial** directory and type the following command:
-  
-	```
-	 npm run build-calc-modular
-	```
+1. On the command line, type the following command to rebuild the application:
+    
+    ```
+    npm run webpack
+    ```
 
-1. Test the application: Access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
+1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
 
 
 ## Additional Resources

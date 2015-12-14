@@ -9,7 +9,7 @@ In this unit, you use a template string to display the amortization table.
 
 ## Steps
 	 
-1. In **index.html**, add the following HTML fragment after the ```<h3>``` block (monthly rate):
+1. In `index.html`, add the following HTML fragment after the ```<h3>``` block (monthly rate):
  
     ```
     <table>
@@ -26,7 +26,7 @@ In this unit, you use a template string to display the amortization table.
     </table>
     ```
  
-1. In **calc.js**, add the following code at the end of the **calcBtn** click event handler:  	 
+1. In `main.js`, add the following code at the end of the **calcBtn** click event handler:  	 
 
     ```
 	let html = "";
@@ -51,15 +51,22 @@ In this unit, you use a template string to display the amortization table.
 	document.getElementById("amortization").innerHTML = html;
 	```
 	
-1. Test the application: Access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
+1. On the command line, type the following command to rebuild the application:
+    
+    ```
+    npm run babel
+    ```
 
-![](images/unit05.jpg)
+1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
+
+    ![](images/unit05.jpg)
 
 
 ## Additional Resources:
 
 - [MDN: Template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings)
 - [2ality: HTML templating with ES6 template strings](http://www.2ality.com/2015/01/template-strings-html.html)
+
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

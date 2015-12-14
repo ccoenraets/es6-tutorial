@@ -5,13 +5,13 @@ layout: module
 
 Promises have replaced callback functions as the preferred programming style for handling asynchronous calls. A promise is a holder for a result (or an error) that will become available in the future (when the async call returns). Promises have been available in JavaScript through third-party libraries (for example, [jQuery](https://api.jquery.com/promise/) and [q](https://github.com/kriskowal/q)). ECMAScript 6 adds built-in support for promises to JavaScript. 
  
-In this unit, you create a simple application called ratefinder that returns a list of available rates. 
+In this unit, you create a simple application called ratefinder that returns a list of available mortgage rates. 
 
 ## Part 1: Use a Promise
 
-To illustrate the use of promises in this example, you use the new ```fetch()``` function. At the time of this writing, ```fetch()``` is available in the latest version of Chrome, Firefox, and Opera, but not in IE and Safari. You can read more about ```fetch()``` [here](http://jakearchibald.com/2015/thats-so-fetch/).
+To illustrate the use of promises in this example, you use the new ```fetch()``` function. At the time of this writing, ```fetch()``` is available in the latest version of Chrome, Firefox, and Opera, but not in IE and Safari. You can check the current availability of `fetch()` [here](http://caniuse.com/#feat=fetch). You can read more about `fetch()` [here](http://jakearchibald.com/2015/thats-so-fetch/).
 
-1. In the **es6-tutorial** directory, create a file named **ratefinder.html** implemented as follows:
+1. Create a file named `ratefinder.html` in the `es6-tutorial` directory. implemented the file as follows:
 
     ```
     <!DOCTYPE html>
@@ -21,13 +21,12 @@ To illustrate the use of promises in this example, you use the new ```fetch()```
     </head>
     <body>
     	<table id="rates"></table>
-        <script src="node_modules/babel-core/browser.js"></script>
-        <script type="text/babel" src="ratefinder.js"></script>
+        <script src="build/ratefinder.bundle.js"></script>
     </body>
     </html>
     ```
  
-1. In the **es6-tutorial** directory, create a file named **ratefinder.js** implemented as follows:
+1. Create a file named `ratefinder.js` in the `es6-tutorial/js` directory. implemented the file as follows:
 
     ```
     let url = "rates.json";
@@ -43,17 +42,38 @@ To illustrate the use of promises in this example, you use the new ```fetch()```
     ```
     
     > To keep things simple, this code uses a static data file: rates.json. The application would work the same way with a URL pointing to a remote service.
+
+1. Open `webpack.config.js` in your code editor. In `module.exports`, modify the entry and output items as follows:         
+
+    ```
+    entry: {
+        app: "./js/main.js",
+        ratefinder: "./js/ratefinder.js"
+    },
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: '[name].bundle.js'
+    },
+    ```                
+
+    > The **webpack** script will now compile two applications: **main.js** and **ratefinder.js**. It will create two compiled files based on the entry name: **app.bundle.js** and **ratefinder.bundle.js**.         
             
-1. Test the application: Access [http://localhost:8080/ratefinder.html](http://localhost:8080/ratefinder.html).
+1. On the command line, type the following command to rebuild the application:
+
+	```
+    npm run webpack
+	```
+
+1. Open a browser, access [http://localhost:8080/ratefinder.html](http://localhost:8080/ratefinder.html).
           
 
 ## Part 2: Create a Promise
 
-Most of the time, all you'll have to do is use promises returned by built-in or third-party APIs. Sometimes, you may have to create promises as well. In this section you create a mock data service to familiarize yourself with the process of creating ECMAScript 6 promises. The mock data service uses an asynchronous API so that it can replace an actual asynchronous data service for test or other purpose.
+Most of the time, all you'll have to do is use promises returned by built-in or third-party APIs. Sometimes, you may have to create your own promises as well. In this section you create a mock data service to familiarize yourself with the process of creating ECMAScript 6 promises. The mock data service uses an asynchronous API so that it can replace an actual asynchronous data service for test or other purpose.
 
-1. In the **modules** directory, create a new file named **mockservice.js** 
+1. Create a new file named `rate-service-mock.js` in the `js` directory. 
 
-1. In mockservice.js, define a ```rates``` variable with some sample data:
+1. In rate-service-mock.js.js, define a ```rates``` variable with some sample data:
  
     ```
     let rates = [
@@ -70,7 +90,7 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
     ];
     ```
  
-1. Define a ```findAll()``` function defined as follows:
+1. Define a ```findAll()``` function implemented as follows:
 
     ```
     export let findAll = () => new Promise((resolve, reject) => {
@@ -82,19 +102,6 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
     });
     ```
     
-    This is equivalent to the following code using the traditional function syntax:
-
-    ```
-    export var findAll = function() {
-        return new Promise(function (resolve, reject) {
-            if (rates) {
-                resolve(rates);
-            } else {
-                reject("No rates");
-            }
-        });
-    }
-    ```
 1. Open **ratefinder.js**. Change the implementation as follows:
 
     ```
@@ -108,32 +115,14 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
         })
         .catch(e => console.log(e));
     ```
-
-1. In your code editor, open **package.json** and add a **build-ratefinder** script. The scripts section of package.json should now look like this:
-
-    ```
-    "scripts": {
-        "start": "http-server",
-        "build-calc": "babel calc.js -o calc-bundle.js",
-        "build-calc-modular": "browserify calc.js -t babelify -o calc-bundle.js",
-        "build-ratefinder": "browserify ratefinder.js -t babelify -o ratefinder-bundle.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    ```
-
-1. On the command line, make sure you are in the **es6-tutorial** directory and type the following command:
-  
-	```
-	 npm run build-ratefinder
-	```
-
-1. In your code editor, open **ratefinder.html**. Remove the existing ```<script>``` tags and replace them with the following ```<script>``` tags:
+    
+1. On the command line, type the following command to rebuild the application:
 
 	```
-	<script src="ratefinder-bundle.js"></script>
+    npm run webpack
 	```
 
-1. Test the application: Access [http://localhost:8080/ratefinder.html](http://localhost:8080/ratefinder.html).
+1. Open a browser, access [http://localhost:8080/ratefinder.html](http://localhost:8080/ratefinder.html).
     
 
 ## Additional Resources
