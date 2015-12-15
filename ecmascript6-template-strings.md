@@ -1,7 +1,7 @@
 ---
 layout: module
 ---
-# Unit 5: Template Strings
+# 5. Using Template Strings
 
 In ECMAScript 6, template strings are single or multi-line string literals defined using the \` (back-tick) character and allowing embedded expressions defined inside ```${ }```. 
 
@@ -70,8 +70,8 @@ In this unit, you use a template string to display the amortization table.
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="ecmascript-arrow-functions.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="ecmascript-modules.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-arrow-functions.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="ecmascript6-setup-webpack.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
 

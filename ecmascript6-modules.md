@@ -1,7 +1,7 @@
 ---
 layout: module
 ---
-# Unit 6: Modules
+# 7. Using Modules
 
 In this unit, you create a module that exposes the business logic related to a mortgage, and you build the application using Webpack.
 
@@ -80,8 +80,8 @@ In this unit, you create a module that exposes the business logic related to a m
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="ecmascript-template-strings.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="ecmascript-classes.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-setup-webpack.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="ecmascript6-classes.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
 

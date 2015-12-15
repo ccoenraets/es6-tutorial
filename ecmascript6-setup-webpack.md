@@ -1,7 +1,7 @@
 ---
 layout: module
 ---
-# Unit 6: Setting Up Webpack
+# 6. Setting Up Webpack
 
 Modules have been available in JavaScript through third-party libraries. ECMAScript 6 adds native support for modules to JavaScript. When you compile a modular ECMAScript 6 application to ECMASCript 5, the compiler relies on a third party library to implement modules in ECMAScript 5. [Webpack](http://webpack.github.io/) and [Browserify](http://browserify.org/) are two popular options, and Babel supports both (and others). We use Webpack in this tutorial. 
 
@@ -19,8 +19,8 @@ In this unit, you add Webpack to your development environment.
 
     ```
     "scripts": {
-        "start": "http-server",
-        "babel": "babel main.js -o calc-bundle.js",
+        "babel": "babel js/main.js -o build/main.bundle.js",
+	    "start": "http-server",
         "webpack": "webpack"
     },
     ```
@@ -35,7 +35,7 @@ In this unit, you add Webpack to your development environment.
          entry: "./js/main.js",
          output: {
              path: path.resolve(__dirname, 'build'),
-             filename: 'bundle.js'
+             filename: 'main.bundle.js'
          },
          module: {
              loaders: [
@@ -73,8 +73,8 @@ In this unit, you add Webpack to your development environment.
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="ecmascript-template-strings.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="ecmascript-classes.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-template-strings.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="ecmascript6-modules.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
 

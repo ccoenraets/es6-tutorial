@@ -1,7 +1,7 @@
 ---
 layout: module
 ---
-# Unit 3: Destructuring
+# 3. Using Destructuring
 
 ECMAScript 6 introduces new syntax that makes it easy to create objects based on variables. Conversely, the new object and array destructuring syntax makes it easy to create variables based on objects and arrays. 
 
@@ -9,7 +9,7 @@ In this unit, you modify the calculateMonthlyPayment function to return multiple
 
 ## Step 1: Creating Objects from Variables
 
-1. Open `main.js` in your code editor. 
+1. Open `js/main.js` in your code editor. 
 
 1. Modify the return statement of the ```calculateMonthlyPayment``` function as follows:
 
@@ -77,7 +77,7 @@ In this unit, you modify the calculateMonthlyPayment function to return multiple
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="ecmascript-let.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="ecmascript-arrow-functions.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-let.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="ecmascript6-arrow-functions.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>

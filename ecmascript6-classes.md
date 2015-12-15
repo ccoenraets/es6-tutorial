@@ -1,7 +1,7 @@
 ---
 layout: module
 ---
-# Unit 7: Classes
+# 8. Using Classes
 
 ECMAScript 6 introduces the concept of class available in traditional object-oriented languages. In ECMAScript 6, the class syntax is syntactical sugar on top of the existing prototype-based inheritance model. It does not add a new object-oriented inheritance model to JavaScript.
 
@@ -171,7 +171,7 @@ To build the project:
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="ecmascript-modules.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="ecmascript-promises.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-modules.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="ecmascript6-promises.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>

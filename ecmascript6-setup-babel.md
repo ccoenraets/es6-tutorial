@@ -1,7 +1,7 @@
 ---
 layout: module
 ---
-# Unit 1: Setting Up a Babel Project
+# 1. Setting Up a Babel Project
 
 Current browsers don't support all the new ECMAScript 6 (aka ECMAScript 2015) features yet (see [comptability table](http://kangax.github.io/compat-table/es6/)). You need to use a compiler (transpiler) to transform your ECMAScript 6 code to ECMAScript 5 compatible code. Although there are other options, [Babel](http://babeljs.io/) has become the de-facto standard to compile  ECMAScript 6 applications to a version of ECMAScript that can run in current browsers. Babel can also compile other versions of ECMAScript as well as React's JSX, but that is beyond the scope of this tutorial.
 
@@ -65,11 +65,14 @@ As you just saw, the current version of the application runs in current browsers
 	```
 	"scripts": {
         "babel": "babel js/main.js -o build/main.bundle.js",
-		"start": "http-server",
+		"start": "http-server"
 	},
 	```
+
+1. In the `es6-tutorial` directory, create a `build` directory to host the compiled version of the application.
 	
 ## Step 3: Build and Run	
+
 
 1. On the command line, make sure you are in the `es6-tutorial` directory, and type the following command to run the **babel** script and compile main.js:
 
@@ -77,10 +80,10 @@ As you just saw, the current version of the application runs in current browsers
 	 npm run babel
 	```
 
-1. Open **index.html** in your code editor, and modify the ```<script>``` tag as follows to load `bundle.js`, the compiled version of `main.js`:
+1. Open **index.html** in your code editor, and modify the ```<script>``` tag as follows to load `build/main.bundle.js`, the compiled version of `js/main.js`:
 
 	```
-	<script src="bundle.js"></script>
+	<script src="build/main.bundle.js"></script>
 	```
 
 1. Open a new command prompt. Navigate (`cd`) to the `es6-tutorial` directory, and type the following command to start http-server:
@@ -94,7 +97,7 @@ As you just saw, the current version of the application runs in current browsers
 	```
 	"scripts": {
         "babel": "babel js/main.js -o build/main.bundle.js",
-	    "start": "http-server -p 9000",
+	    "start": "http-server -p 9000"
 	},
 	```
 
@@ -104,7 +107,7 @@ As you just saw, the current version of the application runs in current browsers
 
 	![](images/unit01.jpg)
 	
-1. Open `main.bundle.js` in your code editor and notice that the generated code is virtually identical to the source code (`main.js`). This is because the current code in main.js doesn't include any ECMAScript 6 feature. With this setup in place, we are now ready to start using ECMAScript 6 features in the next unit. 
+1. Open `build/main.bundle.js` in your code editor and notice that the generated code is virtually identical to the source code (`js/main.js`). This is because the current code in main.js doesn't include any ECMAScript 6 feature. With this setup in place, we are now ready to start using ECMAScript 6 features in the next unit. 
 
 
 ## Additional Resources
@@ -116,6 +119,6 @@ As you just saw, the current version of the application runs in current browsers
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
 <a href="index.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="ecmascript-let.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-let.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>

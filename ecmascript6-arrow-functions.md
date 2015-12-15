@@ -1,7 +1,7 @@
 ---
 layout: module
 ---
-# Unit 4: Arrow Functions
+# 4. Using Arrow Functions
 
 The ECMAScript 6 arrow function syntax is a shorthand for the ECMAScript 5 function syntax. It supports both block and expression bodies. The value of ```this``` inside the function is not altered: it is the same as the value of ```this``` outside the function. No more ```var self = this``` to keep track of the current scope. 
 
@@ -9,7 +9,7 @@ In this unit, you add a new function to calculate the mortgage amortization. You
  
 ## Steps
 
-1. Open `main.js`. Right after the ```calculateMonthlyPayment``` function, add a ```calculateAmortization``` function defined as follows:
+1. Open `js/main.js`. Right after the ```calculateMonthlyPayment``` function, add a ```calculateAmortization``` function defined as follows:
 
     ```
     let calculateAmortization = (principal, years, rate) => {
@@ -80,7 +80,7 @@ In this unit, you add a new function to calculate the mortgage amortization. You
 
 1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button. Open the developer console: you should see the amortization values in the console log.
 
-    ![](images/unit04.jpg)
+    ![](images/amortization-in-console.jpg)
 
 
 ## Additional Resources
@@ -90,8 +90,8 @@ In this unit, you add a new function to calculate the mortgage amortization. You
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="ecmascript-destructuring.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="ecmascript-template-strings.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-destructuring.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="ecmascript6-template-strings.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
 

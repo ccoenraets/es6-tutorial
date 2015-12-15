@@ -1,7 +1,7 @@
 ---
 layout: module
 ---
-# Unit 8: Promises
+# 9. Using Promises
 
 Promises have replaced callback functions as the preferred programming style for handling asynchronous calls. A promise is a holder for a result (or an error) that will become available in the future (when the async call returns). Promises have been available in JavaScript through third-party libraries (for example, [jQuery](https://api.jquery.com/promise/) and [q](https://github.com/kriskowal/q)). ECMAScript 6 adds built-in support for promises to JavaScript. 
  
@@ -102,10 +102,10 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
     });
     ```
     
-1. Open **ratefinder.js**. Change the implementation as follows:
+1. Open `ratefinder.js`. Change the implementation as follows:
 
     ```
-    import * as service from './modules/mockservice';
+    import * as service from './rate-service-mock';
     
     service.findAll()
         .then(rates => {
@@ -133,7 +133,7 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="ecmascript-classes.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="ecmascript6-classes.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
 <a href="next.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>

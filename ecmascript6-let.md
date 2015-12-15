@@ -1,7 +1,7 @@
 ---
 layout: module
 ---
-# Unit 2: Using ```let``` Variables
+# 2. Using ```let``` Variables
 
 ECMAScript 6 introduces a new keyword to declare variables: ```let```. Unlike variables declared with ```var``` that are function-scoped, variables declared with ```let``` are block-scoped: they only exist in the block they are defined in. 
 
@@ -10,15 +10,15 @@ In this unit, you modify the application to use ```let``` variables.
 
 ## Steps 
 
-1. In your code editor, open `main.js` and examine the ```calculateMonthlyPayment``` function:
+1. In your code editor, open `js/main.js` and examine the ```calculateMonthlyPayment``` function:
 
 	```
 	var calculateMonthlyPayment = function(principal, years, rate) {
 		if (rate) {
 			var monthlyRate = rate / 100 / 12;
 		}
-		var monthlyPayment = principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate), 
-								years * 12)));
+		var monthlyPayment = principal * monthlyRate / 
+		                     (1 - (Math.pow(1/(1 + monthlyRate), years * 12)));
 		return monthlyPayment;
 	};
 	```
@@ -52,8 +52,8 @@ In this unit, you modify the application to use ```let``` variables.
         if (rate) {
             monthlyRate = rate / 100 / 12;
         }
-        let monthlyPayment = principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate),
-        						years * 12)));
+        let monthlyPayment = principal * monthlyRate / 
+                             (1 - (Math.pow(1/(1 + monthlyRate), years * 12)));
         return monthlyPayment;
     };
     ```
@@ -76,7 +76,7 @@ In this unit, you modify the application to use ```let``` variables.
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
-<a href="setup-environment.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
-<a href="ecmascript-destructuring.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a href="ecmascript6-setup-babel.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+<a href="ecmascript6-destructuring.html" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
 </div>
 </div>
