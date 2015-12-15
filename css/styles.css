@@ -1,3 +1,52 @@
+body {
+    font-family: 'Roboto', 'Sans Serif';
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: #03A9F4;
+    padding: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+}
+
+header > h1 {
+    font-weight: 300;
+    font-size: 24px;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+h2 {
+    font-size: 22px;
+    margin: 20px 0 0 0;
+}
+
+h2 > .currency {
+    color: #0288D1;
+}
+
+h3 {
+    margin: 10px 0 28px 0;
+}
+
+h3 > span {
+    color: #0288D1;
+}
+
+.principal {
+    color: #0288D1;
+}
+
+.interest {
+    color: #EF6C00;
+}
+
 input[type=text] {
     -webkit-appearance: none;
     width: 150px;
@@ -12,52 +61,21 @@ input[type=text] {
     box-shadow: none;
 }
 
-button {
-    -webkit-appearance: button;
-    color: #333;
-    background-color: #DDD;
-    border-color: #ccc;
-    display: inline-block;
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid #CCC;
-    border-radius: 2px;
-}
-
-button:hover {
-    background: none repeat scroll 0 0 #CCC;
-}
-
-button:active {
-    background: none repeat scroll 0 0 #BBB;
-}
-
-button:focus {
-    outline:0;
-}
-
 table {
     border-collapse: collapse;
+    font-weight: 300;
+    font-size: 12px;
+}
+
+th {
+    text-align: right;
+    font-weight: 400;
 }
 
 td {
     text-align: right;
     padding: 0 .5rem;
 }
-
 
 th,
 td {
@@ -69,6 +87,7 @@ label {
     display: inline-block;
     width: 80px;
     text-align: right;
+    margin-right: 4px;
 }
 
 .content {
@@ -82,13 +101,13 @@ label {
 }
 
 .bar.principal {
-    background-color: rgb(166, 197, 103);
-    margin-right:.5px;
+    background-color: #0288D1;
+    margin-right:1px;
 }
 
 .bar.interest {
-    background-color: rgb(252, 187, 105);
-    margin-left:.5px;
+    background-color: #EF6C00;
+    margin-left:1px;
 }
 
 .stretch {
@@ -114,7 +133,28 @@ label {
     margin: 6px 0;
 }
 
-.form button {
-    margin: 8px 0;
-    margin-left: 84px;
+button {
+    text-transform: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 2px;
+    background: #FCFCFC;
+    font-size: 16px;
+    border: solid 1px #ddd;
+    color: #444;
+}
+
+button:hover {
+    background: #F4F4F4;
+    border: solid 1px #ccc;
+}
+
+button:active {
+    background: #FEFEFE;
+    border: solid 1px #ddd;
+}
+
+button:focus {
+    outline:0;
 }
