@@ -47,8 +47,8 @@ To illustrate the use of promises in this example, you use the new ```fetch()```
 
     ```
     entry: {
-        app: "./js/main.js",
-        ratefinder: "./js/ratefinder.js"
+        app: './js/main.js',
+        ratefinder: './js/ratefinder.js'
     },
     output: {
         path: path.resolve(__dirname, 'build'),

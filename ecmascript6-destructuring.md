@@ -34,7 +34,7 @@ In this unit, you modify the calculateMonthlyPayment function to return multiple
 
     ```
     <h2>Monthly Payment: <span id="monthlyPayment" class="currency"></span></h2>
-    <h3>Monthly Rate: <span id="monthlyRate" class="currency"></span></h3>
+    <h3>Monthly Rate: <span id="monthlyRate"></span></h3>
     ```
 
 1. Open `main.js`. In the **calcBtn** click event handler, modify the call to ```calculateMonthlyPayment``` as follows:
@@ -67,7 +67,7 @@ In this unit, you modify the calculateMonthlyPayment function to return multiple
 
 1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
 
-    ![](images/unit03.jpg)
+    ![](images/calc-rate.jpg)
     
     
 ## Additional Resources

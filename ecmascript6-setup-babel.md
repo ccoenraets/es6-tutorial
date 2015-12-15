@@ -19,6 +19,8 @@ In this unit, you set up a development environment to develop and run an ECMAScr
 
 1. Open `index.html` in your browser and click the **Calculate** button.
 
+    ![](images/calc-file.jpg)
+
 
 ## Step 2: Set Up Babel
 
@@ -105,7 +107,7 @@ As you just saw, the current version of the application runs in current browsers
 
 1. Click the **Calculate** button to calculate the monthly payment for the mortgage.
 
-	![](images/unit01.jpg)
+	![](images/calc-http.jpg)
 	
 1. Open `build/main.bundle.js` in your code editor and notice that the generated code is virtually identical to the source code (`js/main.js`). This is because the current code in main.js doesn't include any ECMAScript 6 feature. With this setup in place, we are now ready to start using ECMAScript 6 features in the next unit. 
 

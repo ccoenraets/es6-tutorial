@@ -14,13 +14,13 @@ In this unit, you use a template string to display the amortization table.
     ```
     <table>
         <thead>
-        	<tr>
-				<th>Year</th>
-				<th>Principal</th>
-				<th class="stretch"></th>
-				<th>Interest</th>
-				<th>Balance</th>
-        	</tr>
+        <tr>
+            <th>Year</th>
+            <th class="principal">Principal</th>
+            <th class="stretch"></th>
+            <th class="interest">Interest</th>
+            <th>Balance</th>
+        </tr>
         </thead>
         <tbody id="amortization"></tbody>
     </table>
@@ -59,7 +59,7 @@ In this unit, you use a template string to display the amortization table.
 
 1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button.
 
-    ![](images/unit05.jpg)
+    ![](images/amortization-table.jpg)
 
 
 ## Additional Resources:

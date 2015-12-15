@@ -32,7 +32,7 @@ In this unit, you add Webpack to your development environment.
      var webpack = require('webpack');
      
      module.exports = {
-         entry: "./js/main.js",
+         entry: './js/main.js',
          output: {
              path: path.resolve(__dirname, 'build'),
              filename: 'main.bundle.js'

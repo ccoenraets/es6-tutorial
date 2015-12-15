@@ -39,7 +39,7 @@ In this unit, you modify the application to use ```let``` variables.
 
 1. Open a browser, access [http://localhost:8080](http://localhost:8080), and click the **Calculate** button: **it doesn't work**. Open the developer console. You should see a message similar to this:
 	
-	![](images/unit02-error.jpg)
+	![](images/scope-error.jpg)
 	
 	
 	This is because unlike ```var``` variables which are **function-scoped**, ```let``` variables are **block-scoped**: they only exist in the block they are defined in. 
