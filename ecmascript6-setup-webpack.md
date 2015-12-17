@@ -19,7 +19,7 @@ In this unit, you add Webpack to your development environment.
 
     ```
     "scripts": {
-        "babel": "babel js/main.js -o build/main.bundle.js",
+        "babel": "babel --presets es2015 js/main.js -o build/main.bundle.js",
 	    "start": "http-server",
         "webpack": "webpack"
     },
