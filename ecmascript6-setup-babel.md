@@ -3,7 +3,7 @@ layout: module
 ---
 # 1. Setting Up a Babel Project
 
-Current browsers don't support all the new ECMAScript 6 (aka ECMAScript 2015) features yet (see [comptability table](http://kangax.github.io/compat-table/es6/)). You need to use a compiler (transpiler) to transform your ECMAScript 6 code to ECMAScript 5 compatible code. Although there are other options, [Babel](http://babeljs.io/) has become the de-facto standard to compile  ECMAScript 6 applications to a version of ECMAScript that can run in current browsers. Babel can also compile other versions of ECMAScript as well as React's JSX, but that is beyond the scope of this tutorial.
+Current browsers don't support all the new ECMAScript 6 (aka ECMAScript 2015) features yet (see [compatibility table](http://kangax.github.io/compat-table/es6/)). You need to use a compiler (transpiler) to transform your ECMAScript 6 code to ECMAScript 5 compatible code. Although there are other options, [Babel](http://babeljs.io/) has become the de-facto standard to compile  ECMAScript 6 applications to a version of ECMAScript that can run in current browsers. Babel can also compile other versions of ECMAScript as well as React's JSX, but that is beyond the scope of this tutorial.
 
 In this unit, you set up a development environment to develop and run an ECMAScript 6 application using Babel.
 

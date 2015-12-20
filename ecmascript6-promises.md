@@ -73,7 +73,7 @@ Most of the time, all you'll have to do is use promises returned by built-in or 
 
 1. Create a new file named `rate-service-mock.js` in the `js` directory. 
 
-1. In rate-service-mock.js.js, define a ```rates``` variable with some sample data:
+1. In `rate-service-mock.js`, define a ```rates``` variable with some sample data:
  
     ```
     let rates = [
