@@ -7,13 +7,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/index.html" afterPath="$PROJECT_DIR$/classes/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/destructuring/index.html" afterPath="$PROJECT_DIR$/destructuring/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.xml" afterPath="$PROJECT_DIR$/index.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/let/index.html" afterPath="$PROJECT_DIR$/let/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/index.html" afterPath="$PROJECT_DIR$/modules/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promises/index.html" afterPath="$PROJECT_DIR$/promises/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup-babel/index.html" afterPath="$PROJECT_DIR$/setup-babel/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup-webpack/index.html" afterPath="$PROJECT_DIR$/setup-webpack/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sitemap.xml" afterPath="$PROJECT_DIR$/sitemap.xml" />
     </list>
     <ignored path="es6-tutorial.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,6 +76,7 @@
         <option value="$PROJECT_DIR$/css/styles.css" />
         <option value="$PROJECT_DIR$/ecmascript6-setup-babel.md" />
         <option value="$PROJECT_DIR$/ecmascript6-setup-webpack.md" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -90,7 +89,7 @@
     <option name="x" value="2213" />
     <option name="y" value="-313" />
     <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="height" value="1212" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -132,20 +131,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="es6-tutorial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es6-tutorial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="es6-tutorial" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -275,11 +260,17 @@
       <option name="project" value="LOCAL" />
       <updated>1467819784769</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="edits">
+      <created>1467820019938</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1467820019938</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2213" y="-313" width="1440" height="877" extended-state="0" />
+    <frame x="2213" y="-313" width="1440" height="1212" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26458332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
