@@ -2,35 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cc97c66-ac18-4ed5-aeaa-63cffe5a96de" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/GitHub-Mark-32px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/GitHub-Mark-64px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/GitHub-Mark-Light-32px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/GitHub-Mark-Light-64px.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/bg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/bg2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/jslogo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/jslogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/salesforce_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/salesforce_logo2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/arrow-functions/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bootstrap/config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/microsite.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/destructuring/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/let/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prism/prism-coy.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prism/prism.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/prism/prism.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/promises/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup-babel/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/setup-webpack/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/es6-tutorial.iml" afterPath="$PROJECT_DIR$/.idea/es6-tutorial.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="es6-tutorial.iws" />
@@ -241,7 +212,13 @@
       <option name="project" value="LOCAL" />
       <updated>1467819632912</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="edits">
+      <created>1467819748303</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1467819748303</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
