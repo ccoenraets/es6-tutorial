@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ECMAScript 6 Tutorial</title>
-    <link>/</link>
+    <link>http://ccoenraets.github.io/es6-tutorial/</link>
     <description>Recent content on ECMAScript 6 Tutorial</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Apr 2016 22:26:03 -0400</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://ccoenraets.github.io/es6-tutorial/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Setting Up Webpack</title>
-      <link>/setup-webpack/</link>
+      <link>http://ccoenraets.github.io/es6-tutorial/setup-webpack/</link>
       <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
       
-      <guid>/setup-webpack/</guid>
+      <guid>http://ccoenraets.github.io/es6-tutorial/setup-webpack/</guid>
       <description>
 
 &lt;p&gt;Modules have been available in JavaScript through third-party libraries. ECMAScript 6 adds native support for modules to JavaScript. When you compile a modular ECMAScript 6 application to ECMASCript 5, the compiler relies on a third party library to implement modules in ECMAScript 5. &lt;a href=&#34;http://webpack.github.io/&#34;&gt;Webpack&lt;/a&gt; and &lt;a href=&#34;http://browserify.org/&#34;&gt;Browserify&lt;/a&gt; are two popular options, and Babel supports both (and others). We use Webpack in this tutorial.&lt;/p&gt;
@@ -101,10 +101,10 @@
     
     <item>
       <title>Setting Up a Babel Project</title>
-      <link>/setup-babel/</link>
+      <link>http://ccoenraets.github.io/es6-tutorial/setup-babel/</link>
       <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
       
-      <guid>/setup-babel/</guid>
+      <guid>http://ccoenraets.github.io/es6-tutorial/setup-babel/</guid>
       <description>
 
 &lt;p&gt;Current browsers don&amp;rsquo;t support all the new ECMAScript 6 (aka ECMAScript 2015) features yet (see &lt;a href=&#34;http://kangax.github.io/compat-table/es6/&#34;&gt;comptability table&lt;/a&gt;). You need to use a compiler (transpiler) to transform your ECMAScript 6 code to ECMAScript 5 compatible code. Although there are other options, &lt;a href=&#34;http://babeljs.io/&#34;&gt;Babel&lt;/a&gt; has become the de-facto standard to compile  ECMAScript 6 applications to a version of ECMAScript that can run in current browsers. Babel can also compile other versions of ECMAScript as well as React&amp;rsquo;s JSX, but that is beyond the scope of this tutorial.&lt;/p&gt;
@@ -133,7 +133,7 @@
 
 &lt;li&gt;&lt;p&gt;Open &lt;code&gt;index.html&lt;/code&gt; in your browser and click the &lt;strong&gt;Calculate&lt;/strong&gt; button.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/calc-file.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;http://ccoenraets.github.io/es6-tutorial/images/calc-file.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;step-2-set-up-babel&#34;&gt;Step 2: Set Up Babel&lt;/h2&gt;
@@ -242,7 +242,7 @@
 
 &lt;li&gt;&lt;p&gt;Click the &lt;strong&gt;Calculate&lt;/strong&gt; button to calculate the monthly payment for the mortgage.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/calc-http.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;http://ccoenraets.github.io/es6-tutorial/images/calc-http.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Open &lt;code&gt;build/main.bundle.js&lt;/code&gt; in your code editor and notice that the generated code is virtually identical to the source code (&lt;code&gt;js/main.js&lt;/code&gt;). This is because the current code in main.js doesn&amp;rsquo;t include any ECMAScript 6 feature. With this setup in place, we are now ready to start using ECMAScript 6 features in the next unit.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -259,10 +259,10 @@
     
     <item>
       <title>Using Arrow Functions</title>
-      <link>/arrow-functions/</link>
+      <link>http://ccoenraets.github.io/es6-tutorial/arrow-functions/</link>
       <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
       
-      <guid>/arrow-functions/</guid>
+      <guid>http://ccoenraets.github.io/es6-tutorial/arrow-functions/</guid>
       <description>
 
 &lt;p&gt;The ECMAScript 6 arrow function syntax is a shorthand for the ECMAScript 5 function syntax. It supports both block and expression bodies. The value of &lt;code&gt;this&lt;/code&gt; inside the function is not altered: it is the same as the value of &lt;code&gt;this&lt;/code&gt; outside the function. No more &lt;code&gt;var self = this&lt;/code&gt; to keep track of the current scope.&lt;/p&gt;
@@ -346,7 +346,7 @@
 
 &lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button. Open the developer console: you should see the amortization values in the console log.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/amortization-in-console.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;http://ccoenraets.github.io/es6-tutorial/images/amortization-in-console.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
@@ -360,10 +360,10 @@
     
     <item>
       <title>Using Classes</title>
-      <link>/classes/</link>
+      <link>http://ccoenraets.github.io/es6-tutorial/classes/</link>
       <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
       
-      <guid>/classes/</guid>
+      <guid>http://ccoenraets.github.io/es6-tutorial/classes/</guid>
       <description>
 
 &lt;p&gt;ECMAScript 6 introduces the concept of class available in traditional object-oriented languages. In ECMAScript 6, the class syntax is syntactical sugar on top of the existing prototype-based inheritance model. It does not add a new object-oriented inheritance model to JavaScript.&lt;/p&gt;
@@ -538,10 +538,10 @@
     
     <item>
       <title>Using Destructuring</title>
-      <link>/destructuring/</link>
+      <link>http://ccoenraets.github.io/es6-tutorial/destructuring/</link>
       <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
       
-      <guid>/destructuring/</guid>
+      <guid>http://ccoenraets.github.io/es6-tutorial/destructuring/</guid>
       <description>
 
 &lt;p&gt;ECMAScript 6 introduces new syntax that makes it easy to create objects based on variables. Conversely, the new object and array destructuring syntax makes it easy to create variables based on objects and arrays.&lt;/p&gt;
@@ -605,7 +605,7 @@ var monthlyRate = mortgage.monthlyRate;
 
 &lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/calc-rate.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;http://ccoenraets.github.io/es6-tutorial/images/calc-rate.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
@@ -619,10 +619,10 @@ var monthlyRate = mortgage.monthlyRate;
     
     <item>
       <title>Using Modules</title>
-      <link>/modules/</link>
+      <link>http://ccoenraets.github.io/es6-tutorial/modules/</link>
       <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
       
-      <guid>/modules/</guid>
+      <guid>http://ccoenraets.github.io/es6-tutorial/modules/</guid>
       <description>
 
 &lt;p&gt;In this unit, you create a module that exposes the business logic related to a mortgage, and you build the application using Webpack.&lt;/p&gt;
@@ -707,10 +707,10 @@ export let calculateAmortization = (principal, years, rate) =&amp;gt; {
     
     <item>
       <title>Using Promises</title>
-      <link>/promises/</link>
+      <link>http://ccoenraets.github.io/es6-tutorial/promises/</link>
       <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
       
-      <guid>/promises/</guid>
+      <guid>http://ccoenraets.github.io/es6-tutorial/promises/</guid>
       <description>
 
 &lt;p&gt;Promises have replaced callback functions as the preferred programming style for handling asynchronous calls. A promise is a holder for a result (or an error) that will become available in the future (when the async call returns). Promises have been available in JavaScript through third-party libraries (for example, &lt;a href=&#34;https://api.jquery.com/promise/&#34;&gt;jQuery&lt;/a&gt; and &lt;a href=&#34;https://github.com/kriskowal/q&#34;&gt;q&lt;/a&gt;). ECMAScript 6 adds built-in support for promises to JavaScript.&lt;/p&gt;
@@ -861,10 +861,10 @@ service.findAll()
     
     <item>
       <title>Using let Variables</title>
-      <link>/let/</link>
+      <link>http://ccoenraets.github.io/es6-tutorial/let/</link>
       <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
       
-      <guid>/let/</guid>
+      <guid>http://ccoenraets.github.io/es6-tutorial/let/</guid>
       <description>
 
 &lt;p&gt;ECMAScript 6 introduces a new keyword to declare variables: &lt;code&gt;let&lt;/code&gt;. Unlike variables declared with &lt;code&gt;var&lt;/code&gt; that are function-scoped, variables declared with &lt;code&gt;let&lt;/code&gt; are block-scoped: they only exist in the block they are defined in.&lt;/p&gt;
@@ -921,7 +921,7 @@ service.findAll()
 
 &lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button: &lt;strong&gt;it doesn&amp;rsquo;t work&lt;/strong&gt;. Open the developer console. You should see a message similar to this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/images/scope-error.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://ccoenraets.github.io/es6-tutorial/images/scope-error.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This is because unlike &lt;code&gt;var&lt;/code&gt; variables which are &lt;strong&gt;function-scoped&lt;/strong&gt;, &lt;code&gt;let&lt;/code&gt; variables are &lt;strong&gt;block-scoped&lt;/strong&gt;: they only exist in the block they are defined in.&lt;/p&gt;&lt;/li&gt;
 

@@ -2,47 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/</loc>
+    <loc>http://ccoenraets.github.io/es6-tutorial/</loc>
     <lastmod>2016-04-22T22:26:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/setup-webpack/</loc>
+    <loc>http://ccoenraets.github.io/es6-tutorial/setup-webpack/</loc>
     <lastmod>2016-04-22T22:26:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/setup-babel/</loc>
+    <loc>http://ccoenraets.github.io/es6-tutorial/setup-babel/</loc>
     <lastmod>2016-04-22T22:26:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/arrow-functions/</loc>
+    <loc>http://ccoenraets.github.io/es6-tutorial/arrow-functions/</loc>
     <lastmod>2016-04-22T22:26:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/classes/</loc>
+    <loc>http://ccoenraets.github.io/es6-tutorial/classes/</loc>
     <lastmod>2016-04-22T22:26:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/destructuring/</loc>
+    <loc>http://ccoenraets.github.io/es6-tutorial/destructuring/</loc>
     <lastmod>2016-04-22T22:26:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/modules/</loc>
+    <loc>http://ccoenraets.github.io/es6-tutorial/modules/</loc>
     <lastmod>2016-04-22T22:26:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/promises/</loc>
+    <loc>http://ccoenraets.github.io/es6-tutorial/promises/</loc>
     <lastmod>2016-04-22T22:26:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/let/</loc>
+    <loc>http://ccoenraets.github.io/es6-tutorial/let/</loc>
     <lastmod>2016-04-22T22:26:03-04:00</lastmod>
   </url>
   
