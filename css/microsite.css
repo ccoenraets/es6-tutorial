@@ -189,7 +189,7 @@ a:hover {
   text-align: center;
   color: rgba(255, 255, 255, .8);
   background-color: #11596D;
-  background-image: url(/images/bg2.png);
+  background-image: url('{{ .Site.BaseURL }}/images/bg2.png');
   /*background-position: bottom;*/
   margin-bottom: 40px;
   font-size: 20px;

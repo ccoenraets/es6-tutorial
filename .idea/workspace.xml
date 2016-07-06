@@ -5,8 +5,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arrow-functions/index.html" afterPath="$PROJECT_DIR$/arrow-functions/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/index.html" afterPath="$PROJECT_DIR$/classes/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/microsite.css" afterPath="$PROJECT_DIR$/css/microsite.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/destructuring/index.html" afterPath="$PROJECT_DIR$/destructuring/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.xml" afterPath="$PROJECT_DIR$/index.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/let/index.html" afterPath="$PROJECT_DIR$/let/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/index.html" afterPath="$PROJECT_DIR$/modules/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promises/index.html" afterPath="$PROJECT_DIR$/promises/index.html" />
@@ -266,7 +268,13 @@
       <option name="project" value="LOCAL" />
       <updated>1467820019938</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="edits">
+      <created>1467820789742</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1467820789742</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">

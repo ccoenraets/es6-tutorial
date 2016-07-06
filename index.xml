@@ -242,7 +242,7 @@
 
 &lt;li&gt;&lt;p&gt;Click the &lt;strong&gt;Calculate&lt;/strong&gt; button to calculate the monthly payment for the mortgage.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ccoenraets.github.io/es6-tutorial/images/calc-http.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;{{ .Site.BaseURL }}/images/calc-http.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Open &lt;code&gt;build/main.bundle.js&lt;/code&gt; in your code editor and notice that the generated code is virtually identical to the source code (&lt;code&gt;js/main.js&lt;/code&gt;). This is because the current code in main.js doesn&amp;rsquo;t include any ECMAScript 6 feature. With this setup in place, we are now ready to start using ECMAScript 6 features in the next unit.&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
