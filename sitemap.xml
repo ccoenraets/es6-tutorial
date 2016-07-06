@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2016-04-22T22:26:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/setup-webpack/</loc>
+    <lastmod>2016-04-22T22:26:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/setup-babel/</loc>
+    <lastmod>2016-04-22T22:26:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/arrow-functions/</loc>
+    <lastmod>2016-04-22T22:26:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/classes/</loc>
+    <lastmod>2016-04-22T22:26:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/destructuring/</loc>
+    <lastmod>2016-04-22T22:26:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/modules/</loc>
+    <lastmod>2016-04-22T22:26:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/promises/</loc>
+    <lastmod>2016-04-22T22:26:03-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/let/</loc>
+    <lastmod>2016-04-22T22:26:03-04:00</lastmod>
+  </url>
+  
+</urlset>

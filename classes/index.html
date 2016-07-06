@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <title>Using Classes - ECMAScript 6 Tutorial</title>
+
+    
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    
+    <link href="/css/microsite.css" rel="stylesheet">
+
+    
+    
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-721308-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+    <link href="/prism/prism.css" rel="stylesheet" />
+</head>
+
+<body class="dreamhouse">
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ECMAScript 6 Tutorial</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a
+                        href="https://github.com/dreamhouseapp"><img
+                        src="/images/GitHub-Mark-32px.png" style="border: none;margin: -4px 0;height: 32px;width: 32px;"/>
+                    GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<header class="sb-page-header">
+    <div class="container">
+        <h1>Using Classes</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            
+
+<p>ECMAScript 6 introduces the concept of class available in traditional object-oriented languages. In ECMAScript 6, the class syntax is syntactical sugar on top of the existing prototype-based inheritance model. It does not add a new object-oriented inheritance model to JavaScript.</p>
+
+<p>In this unit, you create an alternative implementation of the mortgage calculator application using a Mortgage class.</p>
+
+<h2 id="part-1-using-a-class">Part 1: Using a Class</h2>
+
+<ol>
+<li><p>Since this is an alternative implementation rather than the logical continuation of the previous implementation, make a copy of <code>index.html</code> and <code>main.js</code> in case you want to go back to that version.</p></li>
+
+<li><p>In <code>main.js</code>, remove the <code>import</code> statement at the top of the file.</p></li>
+
+<li><p>Add the following class definition at the top of file:</p>
+
+<pre><code class="language-javascript">class Mortgage {
+    
+    constructor(principal, years, rate) {
+        this.principal = principal;
+        this.years = years;
+        this.rate = rate;
+    }
+    
+    get monthlyPayment() {
+        let monthlyRate = this.rate / 100 / 12;
+        return this.principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate),
+                    this.years * 12)));
+    }
+    
+    get amortization() {
+        let monthlyPayment = this.monthlyPayment;
+        let monthlyRate = this.rate / 100 / 12;
+        let balance = this.principal;
+        let amortization = [];
+        for (let y=0; y&lt;this.years; y++) {
+            let interestY = 0;
+            let principalY = 0;
+            for (let m=0; m&lt;12; m++) {
+                let interestM = balance * monthlyRate;
+                let principalM = monthlyPayment - interestM;
+                interestY = interestY + interestM;
+                principalY = principalY + principalM;
+                balance = balance - principalM;
+            }
+            amortization.push({principalY, interestY, balance});
+        }
+        return amortization;
+    }
+    
+}
+</code></pre></li>
+
+<li><p>Modify the <strong>calcBtn</strong> click event handler as follows:</p>
+
+<pre><code class="language-javascript">document.getElementById('calcBtn').addEventListener('click', () =&gt; {
+    let principal = document.getElementById(&quot;principal&quot;).value;
+    let years = document.getElementById(&quot;years&quot;).value;
+    let rate = document.getElementById(&quot;rate&quot;).value;
+    let mortgage = new Mortgage(principal, years, rate);
+    document.getElementById(&quot;monthlyPayment&quot;).innerHTML = mortgage.monthlyPayment.toFixed(2);
+    document.getElementById(&quot;monthlyRate&quot;).innerHTML = (rate / 12).toFixed(2);
+    let html = &quot;&quot;;
+    mortgage.amortization.forEach((year, index) =&gt; html += `
+        &lt;tr&gt;
+            &lt;td&gt;${index + 1}&lt;/td&gt;
+            &lt;td class=&quot;currency&quot;&gt;${Math.round(year.principalY)}&lt;/td&gt;
+            &lt;td class=&quot;stretch&quot;&gt;
+                &lt;div class=&quot;flex&quot;&gt;
+                    &lt;div class=&quot;bar principal&quot;
+                         style=&quot;flex:${year.principalY};-webkit-flex:${year.principalY}&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;bar interest&quot;
+                         style=&quot;flex:${year.interestY};-webkit-flex:${year.interestY}&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+            &lt;td class=&quot;currency left&quot;&gt;${Math.round(year.interestY)}&lt;/td&gt;
+            &lt;td class=&quot;currency&quot;&gt;${Math.round(year.balance)}&lt;/td&gt;
+        &lt;/tr&gt;
+    `);
+    document.getElementById(&quot;amortization&quot;).innerHTML = html;
+});
+</code></pre></li>
+
+<li><p>On the command line, type the following command to rebuild the application:</p>
+
+<pre><code class="language-bash">npm run webpack
+</code></pre></li>
+
+<li><p>Open a browser, access <a href="http://localhost:8080">http://localhost:8080</a>, and click the <strong>Calculate</strong> button.</p></li>
+</ol>
+
+<h2 id="part-2-using-classes-in-modules">Part 2: Using Classes in Modules</h2>
+
+<p>To create the module:</p>
+
+<ol>
+<li><p>Create a new file named <code>mortgage2.js</code> in the <code>js</code> directory.</p></li>
+
+<li><p>Copy the <code>Mortgage</code> class definition from <code>main.js</code> into <code>mortgage2.js</code>.</p></li>
+
+<li><p>Add the <code>export default</code> keywords in front of the class definition. <code>mortgage2.js</code> should now look like this:</p>
+
+<pre><code class="language-javascript">export default class Mortgage {
+    
+    constructor(principal, years, rate) {
+        this.principal = principal;
+        this.years = years;
+        this.rate = rate;
+    }
+    
+    get monthlyPayment() {
+        let monthlyRate = this.rate / 100 / 12;
+        return this.principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate),
+                this.years * 12)));
+    }
+    
+    get amortization() {
+        let monthlyPayment = this.monthlyPayment;
+        let monthlyRate = this.rate / 100 / 12;
+        let balance = this.principal;
+        let amortization = [];
+        for (let y=0; y&lt;this.years; y++) {
+            let interestY = 0;
+            let principalY = 0;
+            for (let m=0; m&lt;12; m++) {
+                let interestM = balance * monthlyRate;
+                let principalM = monthlyPayment - interestM;
+                interestY = interestY + interestM;
+                principalY = principalY + principalM;
+                balance = balance - principalM;
+            }
+            amortization.push({principalY, interestY, balance});
+        }
+        return amortization;
+    }
+    
+}
+</code></pre></li>
+</ol>
+
+<p>To use the module:</p>
+
+<ol>
+<li><p>In <code>main.js</code>, remove the Mortgage class definition.</p></li>
+
+<li><p>Import the mortgage module. Add the following <code>import</code> statement as the first line in main.js:</p>
+
+<pre><code class="language-javascript">import Mortgage from './mortgage2';
+</code></pre></li>
+</ol>
+
+<p>To build the project:</p>
+
+<ol>
+<li><p>On the command line, type the following command to rebuild the application:</p>
+
+<pre><code class="language-bash">npm run webpack
+</code></pre></li>
+
+<li><p>Open a browser, access <a href="http://localhost:8080">http://localhost:8080</a>, and click the <strong>Calculate</strong> button.</p></li>
+</ol>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class">MDN: class expression</a></li>
+<li><a href="http://www.2ality.com/2015/02/es6-classes-final.html">2ality: Classes in ECMAScript 6</a></li>
+</ul>
+
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+    
+    
+        
+            <div class="panel-heading">Topics</div>
+            <div class="list-group">
+                
+                <a class="list-group-item" href="/setup-babel/">Setting Up a Babel Project</a>
+                
+                <a class="list-group-item" href="/let/">Using let Variables</a>
+                
+                <a class="list-group-item" href="/destructuring/">Using Destructuring</a>
+                
+                <a class="list-group-item" href="/arrow-functions/">Using Arrow Functions</a>
+                
+                <a class="list-group-item" href="/setup-webpack/">Setting Up Webpack</a>
+                
+                <a class="list-group-item" href="/modules/">Using Modules</a>
+                
+                <a class="list-group-item" href="/classes/">Using Classes</a>
+                
+                <a class="list-group-item" href="/promises/">Using Promises</a>
+                
+            </div>
+        
+    
+</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div style="margin-top: 6px">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ccoenraets.github.io" data-text="ECMAScript 6 Data Tutorial by @ccoenraets #ECMAScript6 #REST #Promises #Babel #Webpack" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <a href="https://twitter.com/ccoenraets" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ccoenraets</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+            <div class="row" style="margin-top:20px;margin-bottom:20px">
+<div class="col-sm-12">
+
+
+    
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+                    
+                    
+                    <a href="/modules/" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+                
+                
+                
+                    
+                    <a href="/promises/" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+                
+            
+        
+            
+        
+    
+
+</div>
+</div>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'es6tutorial';
+    var disqus_identifier = '\/classes\/';
+    var disqus_title = 'Using Classes';
+    var disqus_url = '\/classes\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <hr style="margin-top:30px;background: #EBEEEF"/>
+            <footer style="margin-top:20px;">
+                <p>Written by Christophe Coenraets (<a href="https://twitter.com/ccoenraets">@ccoenraets</a>), Developer Evangelist at <a href="http://developer.salesforce.com">Salesforce</a>.</p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/prism/prism.js"></script>
+
+</body>
+</html>

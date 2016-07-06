@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <title>Setting Up Webpack - ECMAScript 6 Tutorial</title>
+
+    
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    
+    <link href="/css/microsite.css" rel="stylesheet">
+
+    
+    
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-721308-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+    <link href="/prism/prism.css" rel="stylesheet" />
+</head>
+
+<body class="dreamhouse">
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ECMAScript 6 Tutorial</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a
+                        href="https://github.com/dreamhouseapp"><img
+                        src="/images/GitHub-Mark-32px.png" style="border: none;margin: -4px 0;height: 32px;width: 32px;"/>
+                    GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<header class="sb-page-header">
+    <div class="container">
+        <h1>Setting Up Webpack</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            
+
+<p>Modules have been available in JavaScript through third-party libraries. ECMAScript 6 adds native support for modules to JavaScript. When you compile a modular ECMAScript 6 application to ECMASCript 5, the compiler relies on a third party library to implement modules in ECMAScript 5. <a href="http://webpack.github.io/">Webpack</a> and <a href="http://browserify.org/">Browserify</a> are two popular options, and Babel supports both (and others). We use Webpack in this tutorial.</p>
+
+<p>In this unit, you add Webpack to your development environment.</p>
+
+<h2 id="step-1-set-up-webpack">Step 1: Set Up Webpack</h2>
+
+<ol>
+<li><p>On the command line, make sure you are in the <code>es6-tutorial</code> directory and install the <strong>babel-loader</strong> and <strong>webpack</strong> modules:</p>
+
+<pre><code class="language-bash">npm install babel-loader webpack --save-dev
+</code></pre></li>
+
+<li><p>Open <strong>package.json</strong> in your code editor, and add a <strong>webpack</strong> script (right after the <strong>babel</strong> script). The scripts section should now look like this:</p>
+
+<pre><code class="language-json">&quot;scripts&quot;: {
+    &quot;babel&quot;: &quot;babel --presets es2015 js/main.js -o build/main.bundle.js&quot;,
+    &quot;start&quot;: &quot;http-server&quot;,
+    &quot;webpack&quot;: &quot;webpack&quot;
+},
+</code></pre></li>
+
+<li><p>In the <code>es6-tutorial</code> directory, create a new file named <code>webpack.config.js</code> defined as follows:</p>
+
+<pre><code class="language-javascript"> var path = require('path');
+ var webpack = require('webpack');
+
+ module.exports = {
+     entry: './js/main.js',
+     output: {
+         path: path.resolve(__dirname, 'build'),
+         filename: 'main.bundle.js'
+     },
+     module: {
+         loaders: [
+             {
+                 test: /\.js$/,
+                 loader: 'babel-loader',
+                 query: {
+                     presets: ['es2015']
+                 }
+             }
+         ]
+     },
+     stats: {
+         colors: true
+     },
+     devtool: 'source-map'
+ };
+</code></pre></li>
+</ol>
+
+<h2 id="step-2-build-using-webpack">Step 2: Build Using Webpack</h2>
+
+<ol>
+<li><p>On the command line, make sure you are in the <strong>es6-tutorial</strong> directory and type the following command:</p>
+
+<pre><code class="language-bash">npm run webpack
+</code></pre>
+
+
+    
+
+
+<div class="alert alert-info" role="alert">
+    Webpack uses Babel behind the scenes to compile your application. You can build an application using Webpack even if that application is not using ECMAScript 6 modules. In other words, the <strong>babel</strong> script in package.json is not needed anymore.
+</div>
+
+
+    
+</li>
+
+<li><p>Open a browser, access <a href="http://localhost:8080">http://localhost:8080</a>, and click the <strong>Calculate</strong> button.</p></li>
+</ol>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+<li><a href="http://webpack.github.io/docs/">Webpack documentation</a></li>
+</ul>
+
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+    
+    
+        
+            <div class="panel-heading">Topics</div>
+            <div class="list-group">
+                
+                <a class="list-group-item" href="/setup-babel/">Setting Up a Babel Project</a>
+                
+                <a class="list-group-item" href="/let/">Using let Variables</a>
+                
+                <a class="list-group-item" href="/destructuring/">Using Destructuring</a>
+                
+                <a class="list-group-item" href="/arrow-functions/">Using Arrow Functions</a>
+                
+                <a class="list-group-item" href="/setup-webpack/">Setting Up Webpack</a>
+                
+                <a class="list-group-item" href="/modules/">Using Modules</a>
+                
+                <a class="list-group-item" href="/classes/">Using Classes</a>
+                
+                <a class="list-group-item" href="/promises/">Using Promises</a>
+                
+            </div>
+        
+    
+</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div style="margin-top: 6px">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ccoenraets.github.io" data-text="ECMAScript 6 Data Tutorial by @ccoenraets #ECMAScript6 #REST #Promises #Babel #Webpack" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <a href="https://twitter.com/ccoenraets" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ccoenraets</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+            <div class="row" style="margin-top:20px;margin-bottom:20px">
+<div class="col-sm-12">
+
+
+    
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+                    
+                    
+                    <a href="/arrow-functions/" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+                
+                
+                
+                    
+                    <a href="/modules/" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+                
+            
+        
+            
+        
+            
+        
+            
+        
+    
+
+</div>
+</div>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'es6tutorial';
+    var disqus_identifier = '\/setup-webpack\/';
+    var disqus_title = 'Setting Up Webpack';
+    var disqus_url = '\/setup-webpack\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <hr style="margin-top:30px;background: #EBEEEF"/>
+            <footer style="margin-top:20px;">
+                <p>Written by Christophe Coenraets (<a href="https://twitter.com/ccoenraets">@ccoenraets</a>), Developer Evangelist at <a href="http://developer.salesforce.com">Salesforce</a>.</p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/prism/prism.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <title>Using Arrow Functions - ECMAScript 6 Tutorial</title>
+
+    
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    
+    <link href="/css/microsite.css" rel="stylesheet">
+
+    
+    
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-721308-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+    <link href="/prism/prism.css" rel="stylesheet" />
+</head>
+
+<body class="dreamhouse">
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ECMAScript 6 Tutorial</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a
+                        href="https://github.com/dreamhouseapp"><img
+                        src="/images/GitHub-Mark-32px.png" style="border: none;margin: -4px 0;height: 32px;width: 32px;"/>
+                    GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<header class="sb-page-header">
+    <div class="container">
+        <h1>Using Arrow Functions</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            
+
+<p>The ECMAScript 6 arrow function syntax is a shorthand for the ECMAScript 5 function syntax. It supports both block and expression bodies. The value of <code>this</code> inside the function is not altered: it is the same as the value of <code>this</code> outside the function. No more <code>var self = this</code> to keep track of the current scope.</p>
+
+<p>In this unit, you add a new function to calculate the mortgage amortization. You also modify the existing functions to use the new ECMAScript 6 arrow function syntax.</p>
+
+<h2 id="steps">Steps</h2>
+
+<ol>
+<li><p>Open <code>js/main.js</code>. Right after the <code>calculateMonthlyPayment</code> function, add a <code>calculateAmortization</code> function defined as follows:</p>
+
+<pre><code class="language-javascript">let calculateAmortization = (principal, years, rate) =&gt; {
+    let {monthlyRate, monthlyPayment} = calculateMonthlyPayment(principal, years, rate);
+    let balance = principal;
+    let amortization = [];
+    for (let y=0; y&lt;years; y++) {
+        let interestY = 0;  //Interest payment for year y
+        let principalY = 0; //Principal payment for year y
+        for (let m=0; m&lt;12; m++) {
+            let interestM = balance * monthlyRate;       //Interest payment for month m
+            let principalM = monthlyPayment - interestM; //Principal payment for month m
+            interestY = interestY + interestM;
+            principalY = principalY + principalM;
+            balance = balance - principalM;
+        }
+        amortization.push({principalY, interestY, balance});
+    }
+    return {monthlyPayment, monthlyRate, amortization};
+};
+</code></pre></li>
+
+<li><p>Modify the <code>calculateMonthlyPayment</code> function signature as follows:</p>
+
+<pre><code class="language-javascript">let calculateMonthlyPayment = (principal, years, rate) =&gt; {
+</code></pre></li>
+
+<li><p>Modify the signature of the <strong>calcBtn</strong> click event handler as follows:</p>
+
+<pre><code class="language-javascript">document.getElementById('calcBtn').addEventListener('click', () =&gt; {
+</code></pre></li>
+
+<li><p>In the <strong>calcBtn</strong> click event handler, invoke <code>calculateAmortization</code> function instead of <code>calculateMonthlyPayment</code>:</p>
+
+<pre><code class="language-javascript">let {monthlyPayment, monthlyRate, amortization} = calculateAmortization(principal, years, rate);
+</code></pre></li>
+
+<li><p>As the last line of the <strong>calcBtn</strong> click event handler, log amortization data to the console (you&rsquo;ll display the amortization table in the application in the next unit):</p>
+
+<pre><code class="language-javascript">amortization.forEach(month =&gt; console.log(month));
+</code></pre>
+
+
+    
+
+
+<div class="alert alert-info" role="alert">
+    This is an example of an expression body.
+</div>
+
+
+    
+
+
+<p>The complete implementation of the button click handler looks like this:</p>
+
+<pre><code class="language-javascript">document.getElementById('calcBtn').addEventListener('click', () =&gt; {
+    let principal = document.getElementById(&quot;principal&quot;).value;
+    let years = document.getElementById(&quot;years&quot;).value;
+    let rate = document.getElementById(&quot;rate&quot;).value;
+    let {monthlyPayment, monthlyRate, amortization} = calculateAmortization(principal, years, rate);
+    document.getElementById(&quot;monthlyPayment&quot;).innerHTML = monthlyPayment.toFixed(2);
+    document.getElementById(&quot;monthlyRate&quot;).innerHTML = (monthlyRate * 100).toFixed(2);
+    amortization.forEach(month =&gt; console.log(month));
+});
+</code></pre></li>
+
+<li><p>On the command line, type the following command to rebuild the application:</p>
+
+<pre><code class="language-bash">npm run babel
+</code></pre></li>
+
+<li><p>Open a browser, access <a href="http://localhost:8080">http://localhost:8080</a>, and click the <strong>Calculate</strong> button. Open the developer console: you should see the amortization values in the console log.</p>
+
+<p><img src="/images/amortization-in-console.jpg" alt="" /></p></li>
+</ol>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">MDN: Arrow functions</a></li>
+<li><a href="http://www.2ality.com/2012/04/arrow-functions.html">2ality: ECMAScript 6: arrow functions and method definitions</a></li>
+</ul>
+
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+    
+    
+        
+            <div class="panel-heading">Topics</div>
+            <div class="list-group">
+                
+                <a class="list-group-item" href="/setup-babel/">Setting Up a Babel Project</a>
+                
+                <a class="list-group-item" href="/let/">Using let Variables</a>
+                
+                <a class="list-group-item" href="/destructuring/">Using Destructuring</a>
+                
+                <a class="list-group-item" href="/arrow-functions/">Using Arrow Functions</a>
+                
+                <a class="list-group-item" href="/setup-webpack/">Setting Up Webpack</a>
+                
+                <a class="list-group-item" href="/modules/">Using Modules</a>
+                
+                <a class="list-group-item" href="/classes/">Using Classes</a>
+                
+                <a class="list-group-item" href="/promises/">Using Promises</a>
+                
+            </div>
+        
+    
+</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div style="margin-top: 6px">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ccoenraets.github.io" data-text="ECMAScript 6 Data Tutorial by @ccoenraets #ECMAScript6 #REST #Promises #Babel #Webpack" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <a href="https://twitter.com/ccoenraets" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ccoenraets</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+            <div class="row" style="margin-top:20px;margin-bottom:20px">
+<div class="col-sm-12">
+
+
+    
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+                
+                    
+                    
+                    <a href="/destructuring/" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+                
+                
+                
+                    
+                    <a href="/setup-webpack/" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+
+</div>
+</div>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'es6tutorial';
+    var disqus_identifier = '\/arrow-functions\/';
+    var disqus_title = 'Using Arrow Functions';
+    var disqus_url = '\/arrow-functions\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <hr style="margin-top:30px;background: #EBEEEF"/>
+            <footer style="margin-top:20px;">
+                <p>Written by Christophe Coenraets (<a href="https://twitter.com/ccoenraets">@ccoenraets</a>), Developer Evangelist at <a href="http://developer.salesforce.com">Salesforce</a>.</p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/prism/prism.js"></script>
+
+</body>
+</html>

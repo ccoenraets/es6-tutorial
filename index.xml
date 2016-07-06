@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ECMAScript 6 Tutorial</title>
+    <link>/</link>
+    <description>Recent content on ECMAScript 6 Tutorial</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Apr 2016 22:26:03 -0400</lastBuildDate>
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Setting Up Webpack</title>
+      <link>/setup-webpack/</link>
+      <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
+      
+      <guid>/setup-webpack/</guid>
+      <description>
+
+&lt;p&gt;Modules have been available in JavaScript through third-party libraries. ECMAScript 6 adds native support for modules to JavaScript. When you compile a modular ECMAScript 6 application to ECMASCript 5, the compiler relies on a third party library to implement modules in ECMAScript 5. &lt;a href=&#34;http://webpack.github.io/&#34;&gt;Webpack&lt;/a&gt; and &lt;a href=&#34;http://browserify.org/&#34;&gt;Browserify&lt;/a&gt; are two popular options, and Babel supports both (and others). We use Webpack in this tutorial.&lt;/p&gt;
+
+&lt;p&gt;In this unit, you add Webpack to your development environment.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-set-up-webpack&#34;&gt;Step 1: Set Up Webpack&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;On the command line, make sure you are in the &lt;code&gt;es6-tutorial&lt;/code&gt; directory and install the &lt;strong&gt;babel-loader&lt;/strong&gt; and &lt;strong&gt;webpack&lt;/strong&gt; modules:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install babel-loader webpack --save-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;strong&gt;package.json&lt;/strong&gt; in your code editor, and add a &lt;strong&gt;webpack&lt;/strong&gt; script (right after the &lt;strong&gt;babel&lt;/strong&gt; script). The scripts section should now look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;scripts&amp;quot;: {
+    &amp;quot;babel&amp;quot;: &amp;quot;babel --presets es2015 js/main.js -o build/main.bundle.js&amp;quot;,
+    &amp;quot;start&amp;quot;: &amp;quot;http-server&amp;quot;,
+    &amp;quot;webpack&amp;quot;: &amp;quot;webpack&amp;quot;
+},
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In the &lt;code&gt;es6-tutorial&lt;/code&gt; directory, create a new file named &lt;code&gt;webpack.config.js&lt;/code&gt; defined as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt; var path = require(&#39;path&#39;);
+ var webpack = require(&#39;webpack&#39;);
+
+ module.exports = {
+     entry: &#39;./js/main.js&#39;,
+     output: {
+         path: path.resolve(__dirname, &#39;build&#39;),
+         filename: &#39;main.bundle.js&#39;
+     },
+     module: {
+         loaders: [
+             {
+                 test: /\.js$/,
+                 loader: &#39;babel-loader&#39;,
+                 query: {
+                     presets: [&#39;es2015&#39;]
+                 }
+             }
+         ]
+     },
+     stats: {
+         colors: true
+     },
+     devtool: &#39;source-map&#39;
+ };
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-2-build-using-webpack&#34;&gt;Step 2: Build Using Webpack&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;On the command line, make sure you are in the &lt;strong&gt;es6-tutorial&lt;/strong&gt; directory and type the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run webpack
+&lt;/code&gt;&lt;/pre&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    Webpack uses Babel behind the scenes to compile your application. You can build an application using Webpack even if that application is not using ECMAScript 6 modules. In other words, the &lt;strong&gt;babel&lt;/strong&gt; script in package.json is not needed anymore.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://webpack.github.io/docs/&#34;&gt;Webpack documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Setting Up a Babel Project</title>
+      <link>/setup-babel/</link>
+      <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
+      
+      <guid>/setup-babel/</guid>
+      <description>
+
+&lt;p&gt;Current browsers don&amp;rsquo;t support all the new ECMAScript 6 (aka ECMAScript 2015) features yet (see &lt;a href=&#34;http://kangax.github.io/compat-table/es6/&#34;&gt;comptability table&lt;/a&gt;). You need to use a compiler (transpiler) to transform your ECMAScript 6 code to ECMAScript 5 compatible code. Although there are other options, &lt;a href=&#34;http://babeljs.io/&#34;&gt;Babel&lt;/a&gt; has become the de-facto standard to compile  ECMAScript 6 applications to a version of ECMAScript that can run in current browsers. Babel can also compile other versions of ECMAScript as well as React&amp;rsquo;s JSX, but that is beyond the scope of this tutorial.&lt;/p&gt;
+
+&lt;p&gt;In this unit, you set up a development environment to develop and run an ECMAScript 6 application using Babel.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-install-the-sample-application&#34;&gt;Step 1: Install the Sample Application&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Clone the &lt;a href=&#34;https://github.com/ccoenraets/es6-tutorial/&#34;&gt;es6-tutorial&lt;/a&gt; repository that includes an ECMAScript 5 version of the mortgage application we use in this tutorial:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/ccoenraets/es6-tutorial
+&lt;/code&gt;&lt;/pre&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    Alternatively, you can just download and unzip &lt;a href=&#34;https://github.com/ccoenraets/es6-tutorial/archive/master.zip&#34;&gt;this file&lt;/a&gt; instead of cloning the repository.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;code&gt;index.html&lt;/code&gt; in your browser and click the &lt;strong&gt;Calculate&lt;/strong&gt; button.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/images/calc-file.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-2-set-up-babel&#34;&gt;Step 2: Set Up Babel&lt;/h2&gt;
+
+&lt;p&gt;As you just saw, the current version of the application runs in current browsers without compilation: it is written in pure ECMAScript 5. In this section, we set up Babel so that we can start using ECMAScript 6 features in the next unit.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Open a command prompt, and navigate (&lt;code&gt;cd&lt;/code&gt;) to the &lt;code&gt;es6-tutorial&lt;/code&gt; directory.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Type the following command to create a &lt;code&gt;package.json&lt;/code&gt; file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm init
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Press the &lt;strong&gt;Return&lt;/strong&gt; key in response to all the questions to accept the default values.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Type the following command to install the &lt;strong&gt;babel-cli&lt;/strong&gt; and &lt;strong&gt;babel-core&lt;/strong&gt; modules:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install babel-cli babel-core --save-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    There are different ways to install and run Babel. For example, you could also install Babel globally and run it from the command line. Refer to the &lt;a href=&#34;http://babeljs.io/docs/setup/&#34;&gt;Babel&lt;/a&gt; documentation for more information.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Type the following command to install the &lt;strong&gt;ECMAScript 2015 preset&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install babel-preset-es2015 --save-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    In Babel 6, every transformer is a plugin that can be installed separately. A preset is a group of related plugins. Using a preset, you don&amp;rsquo;t have to install and update dozens of plugins individually.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Install &lt;a href=&#34;https://github.com/indexzero/http-server&#34;&gt;http-server&lt;/a&gt; in your project. &lt;strong&gt;http-server&lt;/strong&gt; is a lightweight web server we use to run the application locally during development.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm install http-server --save-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    We are using a local web server because some parts of this tutorial require the application to be loaded using the &lt;strong&gt;http&lt;/strong&gt; protocol and will not work if loaded using the &lt;strong&gt;file&lt;/strong&gt; protocol.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;code&gt;package.json&lt;/code&gt; in your favorite code editor. In the &lt;code&gt;scripts&lt;/code&gt; section, remove the &lt;strong&gt;test&lt;/strong&gt; script, and add two new scripts: a script named &lt;strong&gt;babel&lt;/strong&gt; that compiles main.js to a version of ECMAScript that can run in current browsers, and a script named &lt;strong&gt;start&lt;/strong&gt; that starts the local web server. The &lt;code&gt;scripts&lt;/code&gt; section should now look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;scripts&amp;quot;: {
+    &amp;quot;babel&amp;quot;: &amp;quot;babel --presets es2015 js/main.js -o build/main.bundle.js&amp;quot;,
+    &amp;quot;start&amp;quot;: &amp;quot;http-server&amp;quot;
+},
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In the &lt;code&gt;es6-tutorial&lt;/code&gt; directory, create a &lt;code&gt;build&lt;/code&gt; directory to host the compiled version of the application.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-3-build-and-run&#34;&gt;Step 3: Build and Run&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;On the command line, make sure you are in the &lt;code&gt;es6-tutorial&lt;/code&gt; directory, and type the following command to run the &lt;strong&gt;babel&lt;/strong&gt; script and compile main.js:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt; npm run babel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;strong&gt;index.html&lt;/strong&gt; in your code editor, and modify the &lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt; tag as follows to load &lt;code&gt;build/main.bundle.js&lt;/code&gt;, the compiled version of &lt;code&gt;js/main.js&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script src=&amp;quot;build/main.bundle.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a new command prompt. Navigate (&lt;code&gt;cd&lt;/code&gt;) to the &lt;code&gt;es6-tutorial&lt;/code&gt; directory, and type the following command to start http-server:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If port 8080 is already in use on your computer, modify the &lt;strong&gt;start&lt;/strong&gt; script in &lt;code&gt;package.json&lt;/code&gt; and specify a port that is available on your computer. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;&amp;quot;scripts&amp;quot;: {
+    &amp;quot;babel&amp;quot;: &amp;quot;babel --presets es2015 js/main.js -o build/main.bundle.js&amp;quot;,
+    &amp;quot;start&amp;quot;: &amp;quot;http-server -p 9000&amp;quot;
+},
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser and access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Click the &lt;strong&gt;Calculate&lt;/strong&gt; button to calculate the monthly payment for the mortgage.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/images/calc-http.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;code&gt;build/main.bundle.js&lt;/code&gt; in your code editor and notice that the generated code is virtually identical to the source code (&lt;code&gt;js/main.js&lt;/code&gt;). This is because the current code in main.js doesn&amp;rsquo;t include any ECMAScript 6 feature. With this setup in place, we are now ready to start using ECMAScript 6 features in the next unit.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://babeljs.io/&#34;&gt;Babel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://kangax.github.io/compat-table/es6/&#34;&gt;ES6 compatibility table&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/indexzero/http-server&#34;&gt;http-server repo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Arrow Functions</title>
+      <link>/arrow-functions/</link>
+      <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
+      
+      <guid>/arrow-functions/</guid>
+      <description>
+
+&lt;p&gt;The ECMAScript 6 arrow function syntax is a shorthand for the ECMAScript 5 function syntax. It supports both block and expression bodies. The value of &lt;code&gt;this&lt;/code&gt; inside the function is not altered: it is the same as the value of &lt;code&gt;this&lt;/code&gt; outside the function. No more &lt;code&gt;var self = this&lt;/code&gt; to keep track of the current scope.&lt;/p&gt;
+
+&lt;p&gt;In this unit, you add a new function to calculate the mortgage amortization. You also modify the existing functions to use the new ECMAScript 6 arrow function syntax.&lt;/p&gt;
+
+&lt;h2 id=&#34;steps&#34;&gt;Steps&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Open &lt;code&gt;js/main.js&lt;/code&gt;. Right after the &lt;code&gt;calculateMonthlyPayment&lt;/code&gt; function, add a &lt;code&gt;calculateAmortization&lt;/code&gt; function defined as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let calculateAmortization = (principal, years, rate) =&amp;gt; {
+    let {monthlyRate, monthlyPayment} = calculateMonthlyPayment(principal, years, rate);
+    let balance = principal;
+    let amortization = [];
+    for (let y=0; y&amp;lt;years; y++) {
+        let interestY = 0;  //Interest payment for year y
+        let principalY = 0; //Principal payment for year y
+        for (let m=0; m&amp;lt;12; m++) {
+            let interestM = balance * monthlyRate;       //Interest payment for month m
+            let principalM = monthlyPayment - interestM; //Principal payment for month m
+            interestY = interestY + interestM;
+            principalY = principalY + principalM;
+            balance = balance - principalM;
+        }
+        amortization.push({principalY, interestY, balance});
+    }
+    return {monthlyPayment, monthlyRate, amortization};
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modify the &lt;code&gt;calculateMonthlyPayment&lt;/code&gt; function signature as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let calculateMonthlyPayment = (principal, years, rate) =&amp;gt; {
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modify the signature of the &lt;strong&gt;calcBtn&lt;/strong&gt; click event handler as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;document.getElementById(&#39;calcBtn&#39;).addEventListener(&#39;click&#39;, () =&amp;gt; {
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In the &lt;strong&gt;calcBtn&lt;/strong&gt; click event handler, invoke &lt;code&gt;calculateAmortization&lt;/code&gt; function instead of &lt;code&gt;calculateMonthlyPayment&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let {monthlyPayment, monthlyRate, amortization} = calculateAmortization(principal, years, rate);
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;As the last line of the &lt;strong&gt;calcBtn&lt;/strong&gt; click event handler, log amortization data to the console (you&amp;rsquo;ll display the amortization table in the application in the next unit):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;amortization.forEach(month =&amp;gt; console.log(month));
+&lt;/code&gt;&lt;/pre&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    This is an example of an expression body.
+&lt;/div&gt;
+
+
+    
+
+
+&lt;p&gt;The complete implementation of the button click handler looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;document.getElementById(&#39;calcBtn&#39;).addEventListener(&#39;click&#39;, () =&amp;gt; {
+    let principal = document.getElementById(&amp;quot;principal&amp;quot;).value;
+    let years = document.getElementById(&amp;quot;years&amp;quot;).value;
+    let rate = document.getElementById(&amp;quot;rate&amp;quot;).value;
+    let {monthlyPayment, monthlyRate, amortization} = calculateAmortization(principal, years, rate);
+    document.getElementById(&amp;quot;monthlyPayment&amp;quot;).innerHTML = monthlyPayment.toFixed(2);
+    document.getElementById(&amp;quot;monthlyRate&amp;quot;).innerHTML = (monthlyRate * 100).toFixed(2);
+    amortization.forEach(month =&amp;gt; console.log(month));
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On the command line, type the following command to rebuild the application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run babel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button. Open the developer console: you should see the amortization values in the console log.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/images/amortization-in-console.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions&#34;&gt;MDN: Arrow functions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.2ality.com/2012/04/arrow-functions.html&#34;&gt;2ality: ECMAScript 6: arrow functions and method definitions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Classes</title>
+      <link>/classes/</link>
+      <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
+      
+      <guid>/classes/</guid>
+      <description>
+
+&lt;p&gt;ECMAScript 6 introduces the concept of class available in traditional object-oriented languages. In ECMAScript 6, the class syntax is syntactical sugar on top of the existing prototype-based inheritance model. It does not add a new object-oriented inheritance model to JavaScript.&lt;/p&gt;
+
+&lt;p&gt;In this unit, you create an alternative implementation of the mortgage calculator application using a Mortgage class.&lt;/p&gt;
+
+&lt;h2 id=&#34;part-1-using-a-class&#34;&gt;Part 1: Using a Class&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Since this is an alternative implementation rather than the logical continuation of the previous implementation, make a copy of &lt;code&gt;index.html&lt;/code&gt; and &lt;code&gt;main.js&lt;/code&gt; in case you want to go back to that version.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In &lt;code&gt;main.js&lt;/code&gt;, remove the &lt;code&gt;import&lt;/code&gt; statement at the top of the file.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add the following class definition at the top of file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;class Mortgage {
+    
+    constructor(principal, years, rate) {
+        this.principal = principal;
+        this.years = years;
+        this.rate = rate;
+    }
+    
+    get monthlyPayment() {
+        let monthlyRate = this.rate / 100 / 12;
+        return this.principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate),
+                    this.years * 12)));
+    }
+    
+    get amortization() {
+        let monthlyPayment = this.monthlyPayment;
+        let monthlyRate = this.rate / 100 / 12;
+        let balance = this.principal;
+        let amortization = [];
+        for (let y=0; y&amp;lt;this.years; y++) {
+            let interestY = 0;
+            let principalY = 0;
+            for (let m=0; m&amp;lt;12; m++) {
+                let interestM = balance * monthlyRate;
+                let principalM = monthlyPayment - interestM;
+                interestY = interestY + interestM;
+                principalY = principalY + principalM;
+                balance = balance - principalM;
+            }
+            amortization.push({principalY, interestY, balance});
+        }
+        return amortization;
+    }
+    
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modify the &lt;strong&gt;calcBtn&lt;/strong&gt; click event handler as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;document.getElementById(&#39;calcBtn&#39;).addEventListener(&#39;click&#39;, () =&amp;gt; {
+    let principal = document.getElementById(&amp;quot;principal&amp;quot;).value;
+    let years = document.getElementById(&amp;quot;years&amp;quot;).value;
+    let rate = document.getElementById(&amp;quot;rate&amp;quot;).value;
+    let mortgage = new Mortgage(principal, years, rate);
+    document.getElementById(&amp;quot;monthlyPayment&amp;quot;).innerHTML = mortgage.monthlyPayment.toFixed(2);
+    document.getElementById(&amp;quot;monthlyRate&amp;quot;).innerHTML = (rate / 12).toFixed(2);
+    let html = &amp;quot;&amp;quot;;
+    mortgage.amortization.forEach((year, index) =&amp;gt; html += `
+        &amp;lt;tr&amp;gt;
+            &amp;lt;td&amp;gt;${index + 1}&amp;lt;/td&amp;gt;
+            &amp;lt;td class=&amp;quot;currency&amp;quot;&amp;gt;${Math.round(year.principalY)}&amp;lt;/td&amp;gt;
+            &amp;lt;td class=&amp;quot;stretch&amp;quot;&amp;gt;
+                &amp;lt;div class=&amp;quot;flex&amp;quot;&amp;gt;
+                    &amp;lt;div class=&amp;quot;bar principal&amp;quot;
+                         style=&amp;quot;flex:${year.principalY};-webkit-flex:${year.principalY}&amp;quot;&amp;gt;
+                    &amp;lt;/div&amp;gt;
+                    &amp;lt;div class=&amp;quot;bar interest&amp;quot;
+                         style=&amp;quot;flex:${year.interestY};-webkit-flex:${year.interestY}&amp;quot;&amp;gt;
+                    &amp;lt;/div&amp;gt;
+                &amp;lt;/div&amp;gt;
+            &amp;lt;/td&amp;gt;
+            &amp;lt;td class=&amp;quot;currency left&amp;quot;&amp;gt;${Math.round(year.interestY)}&amp;lt;/td&amp;gt;
+            &amp;lt;td class=&amp;quot;currency&amp;quot;&amp;gt;${Math.round(year.balance)}&amp;lt;/td&amp;gt;
+        &amp;lt;/tr&amp;gt;
+    `);
+    document.getElementById(&amp;quot;amortization&amp;quot;).innerHTML = html;
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On the command line, type the following command to rebuild the application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run webpack
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;part-2-using-classes-in-modules&#34;&gt;Part 2: Using Classes in Modules&lt;/h2&gt;
+
+&lt;p&gt;To create the module:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create a new file named &lt;code&gt;mortgage2.js&lt;/code&gt; in the &lt;code&gt;js&lt;/code&gt; directory.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Copy the &lt;code&gt;Mortgage&lt;/code&gt; class definition from &lt;code&gt;main.js&lt;/code&gt; into &lt;code&gt;mortgage2.js&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add the &lt;code&gt;export default&lt;/code&gt; keywords in front of the class definition. &lt;code&gt;mortgage2.js&lt;/code&gt; should now look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;export default class Mortgage {
+    
+    constructor(principal, years, rate) {
+        this.principal = principal;
+        this.years = years;
+        this.rate = rate;
+    }
+    
+    get monthlyPayment() {
+        let monthlyRate = this.rate / 100 / 12;
+        return this.principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate),
+                this.years * 12)));
+    }
+    
+    get amortization() {
+        let monthlyPayment = this.monthlyPayment;
+        let monthlyRate = this.rate / 100 / 12;
+        let balance = this.principal;
+        let amortization = [];
+        for (let y=0; y&amp;lt;this.years; y++) {
+            let interestY = 0;
+            let principalY = 0;
+            for (let m=0; m&amp;lt;12; m++) {
+                let interestM = balance * monthlyRate;
+                let principalM = monthlyPayment - interestM;
+                interestY = interestY + interestM;
+                principalY = principalY + principalM;
+                balance = balance - principalM;
+            }
+            amortization.push({principalY, interestY, balance});
+        }
+        return amortization;
+    }
+    
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To use the module:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;In &lt;code&gt;main.js&lt;/code&gt;, remove the Mortgage class definition.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Import the mortgage module. Add the following &lt;code&gt;import&lt;/code&gt; statement as the first line in main.js:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;import Mortgage from &#39;./mortgage2&#39;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To build the project:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;On the command line, type the following command to rebuild the application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run webpack
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/class&#34;&gt;MDN: class expression&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.2ality.com/2015/02/es6-classes-final.html&#34;&gt;2ality: Classes in ECMAScript 6&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Destructuring</title>
+      <link>/destructuring/</link>
+      <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
+      
+      <guid>/destructuring/</guid>
+      <description>
+
+&lt;p&gt;ECMAScript 6 introduces new syntax that makes it easy to create objects based on variables. Conversely, the new object and array destructuring syntax makes it easy to create variables based on objects and arrays.&lt;/p&gt;
+
+&lt;p&gt;In this unit, you modify the calculateMonthlyPayment function to return multiple values: the monthly payment, the monthly rate, and the other mortgage parameters. The new ECMAScript 6 object creation and destructuring syntax makes it easy to implement this change.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-creating-objects-from-variables&#34;&gt;Step 1: Creating Objects from Variables&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Open &lt;code&gt;js/main.js&lt;/code&gt; in your code editor.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modify the return statement of the &lt;code&gt;calculateMonthlyPayment&lt;/code&gt; function as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;return {principal, years, rate, monthlyPayment, monthlyRate};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a shorthand for the following ECMAScript 5 syntax:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;return { principal: principal, 
+         years: years, 
+         rate: rate, 
+         monthlyPayment: monthlyPayment, 
+         monthlyRate: monthlyRate };
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-2-creating-variables-from-an-object-using-destructuring&#34;&gt;Step 2: Creating Variables from an Object using Destructuring&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Open &lt;strong&gt;index.html&lt;/strong&gt;. Add the &lt;code&gt;&amp;lt;h3&amp;gt;&lt;/code&gt; block below to display the &lt;strong&gt;monthly rate&lt;/strong&gt; right under the &lt;strong&gt;monthly payment&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;h2&amp;gt;Monthly Payment: &amp;lt;span id=&amp;quot;monthlyPayment&amp;quot; class=&amp;quot;currency&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/h2&amp;gt;
+&amp;lt;h3&amp;gt;Monthly Rate: &amp;lt;span id=&amp;quot;monthlyRate&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/h3&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;code&gt;main.js&lt;/code&gt;. In the &lt;strong&gt;calcBtn&lt;/strong&gt; click event handler, modify the call to &lt;code&gt;calculateMonthlyPayment&lt;/code&gt; as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let {monthlyPayment, monthlyRate} = calculateMonthlyPayment(principal, years, rate);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a shorthand for the following ECMAScript 5 code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var mortgage = calculateMonthlyPayment(principal, years, rate);
+var monthlyPayment = mortgage.monthlyPayment;
+var monthlyRate = mortgage.monthlyRate;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;As the last line of the &lt;strong&gt;calcBtn&lt;/strong&gt; click event handler, add the following code to display the monthly rate right after the monthly payment:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;document.getElementById(&amp;quot;monthlyRate&amp;quot;).innerHTML = (monthlyRate * 100).toFixed(2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-3-build-and-run&#34;&gt;Step 3: Build and Run&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;On the command line, type the following command to rebuild the application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run babel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/images/calc-rate.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment&#34;&gt;MDN: Destructuring assignment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.2ality.com/2015/01/es6-destructuring.html&#34;&gt;2ality: Destructuring and parameter handling in ECMAScript 6&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Modules</title>
+      <link>/modules/</link>
+      <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
+      
+      <guid>/modules/</guid>
+      <description>
+
+&lt;p&gt;In this unit, you create a module that exposes the business logic related to a mortgage, and you build the application using Webpack.&lt;/p&gt;
+
+&lt;h2 id=&#34;step-1-create-the-module&#34;&gt;Step 1: Create the Module&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create a new file named &lt;code&gt;mortgage.js&lt;/code&gt; in the &lt;code&gt;js&lt;/code&gt; directory.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Copy the &lt;code&gt;calculateMonthlyPayment&lt;/code&gt; and &lt;code&gt;calculateAmortization&lt;/code&gt; functions from &lt;code&gt;main.js&lt;/code&gt; into &lt;code&gt;mortgage.js&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add the &lt;code&gt;export&lt;/code&gt; keyword in front of both functions to make them available as part of the module public API. &lt;code&gt;mortgage.js&lt;/code&gt; should now look like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;export let calculateMonthlyPayment = (principal, years, rate) =&amp;gt; {
+    let monthlyRate = 0;
+    if (rate) {
+        monthlyRate = rate / 100 / 12;
+    }
+    let monthlyPayment = principal * monthlyRate / (1 - (Math.pow(1/(1 + monthlyRate),
+            years * 12)));
+    return {principal, years, rate, monthlyPayment, monthlyRate};
+};
+    
+export let calculateAmortization = (principal, years, rate) =&amp;gt; {
+    let {monthlyRate, monthlyPayment} = calculateMonthlyPayment(principal, years, rate);
+    let balance = principal;
+    let amortization = [];
+    for (let y=0; y&amp;lt;years; y++) {
+        let interestY = 0;  //Interest payment for year y
+        let principalY = 0; //Principal payment for year y
+        for (let m=0; m&amp;lt;12; m++) {
+            let interestM = balance * monthlyRate;       //Interest payment for month m
+            let principalM = monthlyPayment - interestM; //Principal payment for month m
+            interestY = interestY + interestM;
+            principalY = principalY + principalM;
+            balance = balance - principalM;
+        }
+        amortization.push({principalY, interestY, balance});
+    }
+    return {monthlyPayment, monthlyRate, amortization};
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-2-use-the-module&#34;&gt;Step 2: Use the Module&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;In &lt;code&gt;main.js&lt;/code&gt;, remove the &lt;code&gt;calculateMonthlyPayment&lt;/code&gt; and &lt;code&gt;calculateAmortization&lt;/code&gt; functions.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Add the following &lt;code&gt;import&lt;/code&gt; statement as the first line in &lt;code&gt;main.js&lt;/code&gt; to import the mortgage module:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;import * as mortgage from &#39;./mortgage&#39;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In the &lt;strong&gt;calcBtn&lt;/strong&gt; click event handler, modify the call to the &lt;code&gt;calculateAmortization&lt;/code&gt; function as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let {monthlyPayment, monthlyRate, amortization} = 
+    mortgage.calculateAmortization(principal, years, rate);
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;step-3-build-and-run&#34;&gt;Step 3: Build and Run&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;On the command line, type the following command to rebuild the application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run webpack
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import&#34;&gt;MDN: import&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export&#34;&gt;MDN: export&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.2ality.com/2014/09/es6-modules-final.html&#34;&gt;2ality: ECMAScript 6 modules: the final syntax&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Promises</title>
+      <link>/promises/</link>
+      <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
+      
+      <guid>/promises/</guid>
+      <description>
+
+&lt;p&gt;Promises have replaced callback functions as the preferred programming style for handling asynchronous calls. A promise is a holder for a result (or an error) that will become available in the future (when the async call returns). Promises have been available in JavaScript through third-party libraries (for example, &lt;a href=&#34;https://api.jquery.com/promise/&#34;&gt;jQuery&lt;/a&gt; and &lt;a href=&#34;https://github.com/kriskowal/q&#34;&gt;q&lt;/a&gt;). ECMAScript 6 adds built-in support for promises to JavaScript.&lt;/p&gt;
+
+&lt;p&gt;In this unit, you create a simple application called ratefinder that returns a list of available mortgage rates.&lt;/p&gt;
+
+&lt;h2 id=&#34;part-1-use-a-promise&#34;&gt;Part 1: Use a Promise&lt;/h2&gt;
+
+&lt;p&gt;To illustrate the use of promises in this example, you use the new &lt;code&gt;fetch()&lt;/code&gt; function. At the time of this writing, &lt;code&gt;fetch()&lt;/code&gt; is available in the latest version of Chrome, Firefox, and Opera, but not in IE and Safari. You can check the current availability of &lt;code&gt;fetch()&lt;/code&gt; &lt;a href=&#34;http://caniuse.com/#feat=fetch&#34;&gt;here&lt;/a&gt;. You can read more about &lt;code&gt;fetch()&lt;/code&gt; &lt;a href=&#34;http://jakearchibald.com/2015/thats-so-fetch/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create a file named &lt;code&gt;ratefinder.html&lt;/code&gt; in the &lt;code&gt;es6-tutorial&lt;/code&gt; directory. implemented the file as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+&amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+    &amp;lt;table id=&amp;quot;rates&amp;quot;&amp;gt;&amp;lt;/table&amp;gt;
+    &amp;lt;script src=&amp;quot;build/ratefinder.bundle.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create a file named &lt;code&gt;ratefinder.js&lt;/code&gt; in the &lt;code&gt;es6-tutorial/js&lt;/code&gt; directory. implemented the file as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let url = &amp;quot;rates.json&amp;quot;;
+    
+fetch(url)
+    .then(response =&amp;gt; response.json())
+    .then(rates =&amp;gt; {
+      let html = &#39;&#39;;
+      rates.forEach(rate =&amp;gt; html += `&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;${rate.name}&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;${rate.years}&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;${rate.rate}%&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;`);
+      document.getElementById(&amp;quot;rates&amp;quot;).innerHTML = html;
+    })
+    .catch(e =&amp;gt; console.log(e));
+&lt;/code&gt;&lt;/pre&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    To keep things simple, this code uses a static data file: rates.json. The application would work the same way with a URL pointing to a remote service.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;code&gt;webpack.config.js&lt;/code&gt; in your code editor. In &lt;code&gt;module.exports&lt;/code&gt;, modify the entry and output items as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;entry: {
+    app: &#39;./js/main.js&#39;,
+    ratefinder: &#39;./js/ratefinder.js&#39;
+},
+output: {
+    path: path.resolve(__dirname, &#39;build&#39;),
+    filename: &#39;[name].bundle.js&#39;
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    The &lt;strong&gt;webpack&lt;/strong&gt; script will now compile two applications: &lt;strong&gt;main.js&lt;/strong&gt; and &lt;strong&gt;ratefinder.js&lt;/strong&gt;. It will create two compiled files based on the entry name: &lt;strong&gt;app.bundle.js&lt;/strong&gt; and &lt;strong&gt;ratefinder.bundle.js&lt;/strong&gt;.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On the command line, type the following command to rebuild the application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run webpack
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080/ratefinder.html&#34;&gt;http://localhost:8080/ratefinder.html&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;part-2-create-a-promise&#34;&gt;Part 2: Create a Promise&lt;/h2&gt;
+
+&lt;p&gt;Most of the time, all you&amp;rsquo;ll have to do is use promises returned by built-in or third-party APIs. Sometimes, you may have to create your own promises as well. In this section you create a mock data service to familiarize yourself with the process of creating ECMAScript 6 promises. The mock data service uses an asynchronous API so that it can replace an actual asynchronous data service for test or other purpose.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Create a new file named &lt;code&gt;rate-service-mock.js&lt;/code&gt; in the &lt;code&gt;js&lt;/code&gt; directory.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In rate-service-mock.js.js, define a &lt;code&gt;rates&lt;/code&gt; variable with some sample data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let rates = [
+    {
+        &amp;quot;name&amp;quot;: &amp;quot;30 years fixed&amp;quot;,
+        &amp;quot;rate&amp;quot;: &amp;quot;13&amp;quot;,
+        &amp;quot;years&amp;quot;: &amp;quot;30&amp;quot;
+    },
+    {
+        &amp;quot;name&amp;quot;: &amp;quot;20 years fixed&amp;quot;,
+        &amp;quot;rate&amp;quot;: &amp;quot;2.8&amp;quot;,
+        &amp;quot;years&amp;quot;: &amp;quot;20&amp;quot;
+    }
+];
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Define a &lt;code&gt;findAll()&lt;/code&gt; function implemented as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;export let findAll = () =&amp;gt; new Promise((resolve, reject) =&amp;gt; {
+    if (rates) {
+        resolve(rates);
+    } else {
+        reject(&amp;quot;No rates&amp;quot;);
+    }
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;code&gt;ratefinder.js&lt;/code&gt;. Change the implementation as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;import * as service from &#39;./rate-service-mock&#39;;
+    
+service.findAll()
+    .then(rates =&amp;gt; {
+        let html = &#39;&#39;;
+        rates.forEach(rate =&amp;gt; html += `&amp;lt;tr&amp;gt;&amp;lt;td&amp;gt;${rate.name}&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;${rate.years}&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;${rate.rate}%&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;`);
+        document.getElementById(&amp;quot;rates&amp;quot;).innerHTML = html;
+    })
+    .catch(e =&amp;gt; console.log(e));
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On the command line, type the following command to rebuild the application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run webpack
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080/ratefinder.html&#34;&gt;http://localhost:8080/ratefinder.html&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&#34;&gt;MDN: Promise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.2ality.com/2014/09/es6-promises-foundations.html&#34;&gt;2ality: Promises&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch&#34;&gt;MDN: Fetch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using let Variables</title>
+      <link>/let/</link>
+      <pubDate>Fri, 22 Apr 2016 22:26:03 -0400</pubDate>
+      
+      <guid>/let/</guid>
+      <description>
+
+&lt;p&gt;ECMAScript 6 introduces a new keyword to declare variables: &lt;code&gt;let&lt;/code&gt;. Unlike variables declared with &lt;code&gt;var&lt;/code&gt; that are function-scoped, variables declared with &lt;code&gt;let&lt;/code&gt; are block-scoped: they only exist in the block they are defined in.&lt;/p&gt;
+
+&lt;p&gt;In this unit, you modify the application to use &lt;code&gt;let&lt;/code&gt; variables.&lt;/p&gt;
+
+&lt;h2 id=&#34;steps&#34;&gt;Steps&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;In your code editor, open &lt;code&gt;js/main.js&lt;/code&gt; and examine the &lt;code&gt;calculateMonthlyPayment&lt;/code&gt; function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;var calculateMonthlyPayment = function(principal, years, rate) {
+    if (rate) {
+        var monthlyRate = rate / 100 / 12;
+    }
+    var monthlyPayment = principal * monthlyRate / 
+                         (1 - (Math.pow(1/(1 + monthlyRate), years * 12)));
+    return monthlyPayment;
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that on line 5, the &lt;code&gt;monthlyRate&lt;/code&gt; variable is available even though it was declared within the &lt;code&gt;if&lt;/code&gt; block. This is because variables declared with &lt;code&gt;var&lt;/code&gt; are &lt;strong&gt;function-scoped&lt;/strong&gt;, and not &lt;strong&gt;block-scoped&lt;/strong&gt;. This way of declaring and using variables is definitely not a best practice: it is used here to illustrate the difference between function-scoped and block-scoped variables.&lt;/p&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    To keep the code simple and readable, the field validation used in this sample application is intentionally simplistic and incomplete.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Replace all the occurrences of &lt;code&gt;var&lt;/code&gt; with &lt;code&gt;let&lt;/code&gt;. &lt;strong&gt;Don&amp;rsquo;t change anything else yet&lt;/strong&gt;.&lt;/p&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    main.js now includes ECMAScript 6 code and will no longer work in ECMAScript 5 browsers.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On the command line, type the following command to run the &lt;strong&gt;babel&lt;/strong&gt; script and compile &lt;code&gt;main.js&lt;/code&gt; to ECMAScript 5:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run babel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button: &lt;strong&gt;it doesn&amp;rsquo;t work&lt;/strong&gt;. Open the developer console. You should see a message similar to this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/images/scope-error.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is because unlike &lt;code&gt;var&lt;/code&gt; variables which are &lt;strong&gt;function-scoped&lt;/strong&gt;, &lt;code&gt;let&lt;/code&gt; variables are &lt;strong&gt;block-scoped&lt;/strong&gt;: they only exist in the block they are defined in.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In &lt;code&gt;main.js&lt;/code&gt;, modify the &lt;code&gt;calculateMonthlyPayment&lt;/code&gt; function as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;let calculateMonthlyPayment = function(principal, years, rate) {
+    let monthlyRate = 0;
+    if (rate) {
+        monthlyRate = rate / 100 / 12;
+    }
+    let monthlyPayment = principal * monthlyRate / 
+                         (1 - (Math.pow(1/(1 + monthlyRate), years * 12)));
+    return monthlyPayment;
+};
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On the command line, type the following command to rebuild the application:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;npm run babel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button: you should now see the monthly payment.&lt;/p&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+    If you are still seeing the error, make sure you clear your browser&amp;rsquo;s cache and refresh the page.
+&lt;/div&gt;
+
+
+    
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let&#34;&gt;MDN let variables&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

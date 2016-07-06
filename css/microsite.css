@@ -1,0 +1,332 @@
+html,
+body,
+p,
+ol,
+ul,
+td,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Open Sans;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Open Sans;
+  font-weight: 300 !important;
+}
+header .navbar .nav>li>a {
+  font-family: Open Sans;
+}
+.social-search .search-query,
+.social-search input.gsc-input {
+  font-family: Open Sans;
+  font-size: 12px;
+  padding: 6px 27px 4px 10px;
+  margin: 2px 0 0 0;
+}
+footer h3,
+footer ul.unstyled li a {
+  font-family: Open Sans !important;
+}
+.footer-copyright {
+  font-family: Open Sans;
+}
+.footer-links a {
+  font-family: Open Sans;
+}
+.hero-slider .slider-item-caption {
+  font-family: Open Sans !important;
+}
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  font-size: 16px;
+  /*font-weight: 300;*/
+}
+
+.jumbotron {
+  padding: 24px 0 24px 0;
+  color: #FFFFFF;
+}
+
+.jumbotron h1 {
+  font-size: 36px;
+  margin: 0 0 12px 0;
+  font-weight: 300;
+}
+.jumbotron p {
+  font-size: 27px;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+  /*text-shadow: 0px 0px 8px #666;*/
+}
+
+.navbar-default {
+  background-color: #EFD75B;
+  border: none;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav>li>a {
+  color: #323330;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #FFFFFF;
+}
+
+h1 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.embed-responsive {
+  margin: 12px 0 30px 0;
+}
+
+.vertical-align {
+  display: flex;
+  align-items: center;
+}
+
+#navbar a {
+  /*padding: 0px;*/
+  text-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-right: 14px;
+  /*padding-bottom: 18px;*/
+  padding-left: 14px;
+  /*border-bottom: 10px solid transparent;*/
+}
+
+.btn.btn-blue {
+  background: -webkit-linear-gradient(#017cb7, #035798);
+  background: -moz-linear-gradient(#017cb7, #035798);
+  background: -o-linear-gradient(#017cb7, #035798);
+  background: -ms-linear-gradient(#017cb7, #035798);
+  background: linear-gradient(#017cb7, #035798);
+  box-shadow: inherit;
+  color: #ffffff;
+  /*cursor: pointer;*/
+  /*display: inline-block;*/
+  font-size: 28px;
+  font-weight: 300;
+  /*height: 33px;*/
+  /*line-height: 33px;*/
+  /*padding: 0 10px;*/
+}
+
+.btn {
+  border-radius: 2px;
+  /*background-color: #f5f5f5;*/
+  /*background: -webkit-linear-gradient(#ffffff, #e6e6e6);*/
+  /*background: -moz-linear-gradient(#ffffff 0%, #e6e6e6 100%);*/
+  /*background: -o-linear-gradient(#ffffff 0%, #e6e6e6 100%);*/
+  /*background: -ms-linear-gradient(#ffffff 0%, #e6e6e6 100%);*/
+  /*background: linear-gradient(#ffffff 0%, #e6e6e6 100%);*/
+  /*background-repeat: repeat-x;*/
+  /*border: 0 none;*/
+  /*border-radius: inherit;*/
+  /*box-shadow: inherit;*/
+  /*cursor: pointer;*/
+  /*display: inline-block;*/
+  /*!*margin: 20px 0 0 0;*!*/
+  /*padding: 4px 12px;*/
+  /*text-align: center;*/
+  /*text-shadow: inherit;*/
+  /*vertical-align: middle;*/
+}
+
+
+.matrix a {
+  color: #000;
+}
+
+.matrix a:hover {
+  text-decoration: none;
+}
+
+.matrix a:hover p {
+  text-decoration: underline;
+}
+
+.matrix a h3 {
+  color: #3190CD;
+}
+
+
+a {
+  color: #3190CD;
+}
+
+a:hover {
+  color: #3190CD;
+  /*text-decoration: none;*/
+}
+
+
+.sb-page-header {
+  position: relative;
+  padding: 30px 15px;
+  text-align: center;
+  color: rgba(255, 255, 255, .8);
+  background-color: #11596D;
+  background-image: url(/images/bg2.png);
+  /*background-position: bottom;*/
+  margin-bottom: 40px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.sb-page-header h1 {
+  margin-top: 0;
+  color: #fff
+}
+
+.sb-page-header p {
+  margin-bottom: 0;
+  line-height: 1.4
+}
+
+.sb-page-header .container {
+  position: relative
+}
+
+@media (min-width:768px) {
+  .sb-page-header {
+    padding-top: 34px;
+    padding-bottom: 20px;
+    text-align: left;
+    font-size: 24px
+  }
+  .sb-page-header h1 {
+    font-size: 60px;
+    line-height: 1
+  }
+}
+
+@media (min-width:992px) {
+  /*.sb-page-header h1,*/
+  /*.sb-page-header p {*/
+    /*margin-right: 380px*/
+  /*}*/
+}
+
+h2 {
+  font-weight: 500 !important;
+  font-size: 28px;
+  /*font-weight: bold !important;*/
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+.box {
+  background: #00ADEF;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.panel-default {
+  border: none;
+  margin-left: 20px;
+}
+
+.panel {
+   -webkit-box-shadow: none;
+   box-shadow: none;
+}
+
+a.list-group-item {
+  /*border-bottom: solid 1px;*/
+  color: #048ECB;
+}
+.list-group {
+  /*border-bottom: solid 1px;*/
+  border: none !important;
+}
+
+.panel-default>.panel-heading {
+  background-color: #FFFFFF;
+  font-weight: bold;
+  /*margin-left: -4px;*/
+
+}
+
+.pane {
+  border: solid 1px #EEE;
+  padding: 10px;
+  border-radius: 4px;
+  display:flex;
+  align-items: center;
+  -webkit-align-items: center;
+  margin-bottom: 12px;
+}
+
+.pane p {
+  margin: 0;
+}
+
+.pane.trailhead {
+  border-left: solid 4px #003F6D;
+}
+
+.pane.warning {
+  border-left: solid 4px #FF0000;
+}
+
+footer {
+  font-weight: 300;
+  color: #BBB;
+}
+
+ol ul {
+  list-style-type: disc;
+  margin-bottom: 12px;
+}
+
+pre {
+  font-size: 14px;
+  border-radius: 2px;
+  border: none;
+}
+
+.alert-info {
+  border:none;
+  background-color: rgba(239,215,91,.2);
+  color:#323330;
+}
+
+.alert-info a {
+  color: #323330;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+}
+
+code {
+  font-family: Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace !important;
+  color: #DD4A68;
+  background-color: #f8f8f8;
+  border-radius: 2px;
+  padding: 2px 4px;
+}

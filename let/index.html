@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <title>Using let Variables - ECMAScript 6 Tutorial</title>
+
+    
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    
+    <link href="/css/microsite.css" rel="stylesheet">
+
+    
+    
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-721308-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+    <link href="/prism/prism.css" rel="stylesheet" />
+</head>
+
+<body class="dreamhouse">
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ECMAScript 6 Tutorial</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a
+                        href="https://github.com/dreamhouseapp"><img
+                        src="/images/GitHub-Mark-32px.png" style="border: none;margin: -4px 0;height: 32px;width: 32px;"/>
+                    GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<header class="sb-page-header">
+    <div class="container">
+        <h1>Using let Variables</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            
+
+<p>ECMAScript 6 introduces a new keyword to declare variables: <code>let</code>. Unlike variables declared with <code>var</code> that are function-scoped, variables declared with <code>let</code> are block-scoped: they only exist in the block they are defined in.</p>
+
+<p>In this unit, you modify the application to use <code>let</code> variables.</p>
+
+<h2 id="steps">Steps</h2>
+
+<ol>
+<li><p>In your code editor, open <code>js/main.js</code> and examine the <code>calculateMonthlyPayment</code> function:</p>
+
+<pre><code class="language-javascript">var calculateMonthlyPayment = function(principal, years, rate) {
+    if (rate) {
+        var monthlyRate = rate / 100 / 12;
+    }
+    var monthlyPayment = principal * monthlyRate / 
+                         (1 - (Math.pow(1/(1 + monthlyRate), years * 12)));
+    return monthlyPayment;
+};
+</code></pre>
+
+<p>Notice that on line 5, the <code>monthlyRate</code> variable is available even though it was declared within the <code>if</code> block. This is because variables declared with <code>var</code> are <strong>function-scoped</strong>, and not <strong>block-scoped</strong>. This way of declaring and using variables is definitely not a best practice: it is used here to illustrate the difference between function-scoped and block-scoped variables.</p>
+
+
+    
+
+
+<div class="alert alert-info" role="alert">
+    To keep the code simple and readable, the field validation used in this sample application is intentionally simplistic and incomplete.
+</div>
+
+
+    
+</li>
+
+<li><p>Replace all the occurrences of <code>var</code> with <code>let</code>. <strong>Don&rsquo;t change anything else yet</strong>.</p>
+
+
+    
+
+
+<div class="alert alert-info" role="alert">
+    main.js now includes ECMAScript 6 code and will no longer work in ECMAScript 5 browsers.
+</div>
+
+
+    
+</li>
+
+<li><p>On the command line, type the following command to run the <strong>babel</strong> script and compile <code>main.js</code> to ECMAScript 5:</p>
+
+<pre><code class="language-bash">npm run babel
+</code></pre></li>
+
+<li><p>Open a browser, access <a href="http://localhost:8080">http://localhost:8080</a>, and click the <strong>Calculate</strong> button: <strong>it doesn&rsquo;t work</strong>. Open the developer console. You should see a message similar to this:</p>
+
+<p><img src="/images/scope-error.jpg" alt="" /></p>
+
+<p>This is because unlike <code>var</code> variables which are <strong>function-scoped</strong>, <code>let</code> variables are <strong>block-scoped</strong>: they only exist in the block they are defined in.</p></li>
+
+<li><p>In <code>main.js</code>, modify the <code>calculateMonthlyPayment</code> function as follows:</p>
+
+<pre><code class="language-javascript">let calculateMonthlyPayment = function(principal, years, rate) {
+    let monthlyRate = 0;
+    if (rate) {
+        monthlyRate = rate / 100 / 12;
+    }
+    let monthlyPayment = principal * monthlyRate / 
+                         (1 - (Math.pow(1/(1 + monthlyRate), years * 12)));
+    return monthlyPayment;
+};
+</code></pre></li>
+
+<li><p>On the command line, type the following command to rebuild the application:</p>
+
+<pre><code class="language-bash">npm run babel
+</code></pre></li>
+
+<li><p>Open a browser, access <a href="http://localhost:8080">http://localhost:8080</a>, and click the <strong>Calculate</strong> button: you should now see the monthly payment.</p>
+
+
+    
+
+
+<div class="alert alert-info" role="alert">
+    If you are still seeing the error, make sure you clear your browser&rsquo;s cache and refresh the page.
+</div>
+
+
+    
+</li>
+</ol>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">MDN let variables</a></li>
+</ul>
+
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+    
+    
+        
+            <div class="panel-heading">Topics</div>
+            <div class="list-group">
+                
+                <a class="list-group-item" href="/setup-babel/">Setting Up a Babel Project</a>
+                
+                <a class="list-group-item" href="/let/">Using let Variables</a>
+                
+                <a class="list-group-item" href="/destructuring/">Using Destructuring</a>
+                
+                <a class="list-group-item" href="/arrow-functions/">Using Arrow Functions</a>
+                
+                <a class="list-group-item" href="/setup-webpack/">Setting Up Webpack</a>
+                
+                <a class="list-group-item" href="/modules/">Using Modules</a>
+                
+                <a class="list-group-item" href="/classes/">Using Classes</a>
+                
+                <a class="list-group-item" href="/promises/">Using Promises</a>
+                
+            </div>
+        
+    
+</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div style="margin-top: 6px">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ccoenraets.github.io" data-text="ECMAScript 6 Data Tutorial by @ccoenraets #ECMAScript6 #REST #Promises #Babel #Webpack" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <a href="https://twitter.com/ccoenraets" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ccoenraets</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+            <div class="row" style="margin-top:20px;margin-bottom:20px">
+<div class="col-sm-12">
+
+
+    
+        
+        
+        
+            
+        
+            
+                
+                    
+                    
+                    <a href="/setup-babel/" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+                
+                
+                
+                    
+                    <a href="/destructuring/" class="btn btn-default pull-right">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+                
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+
+</div>
+</div>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'es6tutorial';
+    var disqus_identifier = '\/let\/';
+    var disqus_title = 'Using let Variables';
+    var disqus_url = '\/let\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <hr style="margin-top:30px;background: #EBEEEF"/>
+            <footer style="margin-top:20px;">
+                <p>Written by Christophe Coenraets (<a href="https://twitter.com/ccoenraets">@ccoenraets</a>), Developer Evangelist at <a href="http://developer.salesforce.com">Salesforce</a>.</p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/prism/prism.js"></script>
+
+</body>
+</html>

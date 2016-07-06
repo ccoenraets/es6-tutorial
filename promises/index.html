@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <title>Using Promises - ECMAScript 6 Tutorial</title>
+
+    
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    
+    <link href="/css/microsite.css" rel="stylesheet">
+
+    
+    
+
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-721308-2', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+    <link href="/prism/prism.css" rel="stylesheet" />
+</head>
+
+<body class="dreamhouse">
+
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">ECMAScript 6 Tutorial</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a
+                        href="https://github.com/dreamhouseapp"><img
+                        src="/images/GitHub-Mark-32px.png" style="border: none;margin: -4px 0;height: 32px;width: 32px;"/>
+                    GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+<header class="sb-page-header">
+    <div class="container">
+        <h1>Using Promises</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            
+
+<p>Promises have replaced callback functions as the preferred programming style for handling asynchronous calls. A promise is a holder for a result (or an error) that will become available in the future (when the async call returns). Promises have been available in JavaScript through third-party libraries (for example, <a href="https://api.jquery.com/promise/">jQuery</a> and <a href="https://github.com/kriskowal/q">q</a>). ECMAScript 6 adds built-in support for promises to JavaScript.</p>
+
+<p>In this unit, you create a simple application called ratefinder that returns a list of available mortgage rates.</p>
+
+<h2 id="part-1-use-a-promise">Part 1: Use a Promise</h2>
+
+<p>To illustrate the use of promises in this example, you use the new <code>fetch()</code> function. At the time of this writing, <code>fetch()</code> is available in the latest version of Chrome, Firefox, and Opera, but not in IE and Safari. You can check the current availability of <code>fetch()</code> <a href="http://caniuse.com/#feat=fetch">here</a>. You can read more about <code>fetch()</code> <a href="http://jakearchibald.com/2015/thats-so-fetch/">here</a>.</p>
+
+<ol>
+<li><p>Create a file named <code>ratefinder.html</code> in the <code>es6-tutorial</code> directory. implemented the file as follows:</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table id=&quot;rates&quot;&gt;&lt;/table&gt;
+    &lt;script src=&quot;build/ratefinder.bundle.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></li>
+
+<li><p>Create a file named <code>ratefinder.js</code> in the <code>es6-tutorial/js</code> directory. implemented the file as follows:</p>
+
+<pre><code class="language-javascript">let url = &quot;rates.json&quot;;
+    
+fetch(url)
+    .then(response =&gt; response.json())
+    .then(rates =&gt; {
+      let html = '';
+      rates.forEach(rate =&gt; html += `&lt;tr&gt;&lt;td&gt;${rate.name}&lt;/td&gt;&lt;td&gt;${rate.years}&lt;/td&gt;&lt;td&gt;${rate.rate}%&lt;/td&gt;&lt;/tr&gt;`);
+      document.getElementById(&quot;rates&quot;).innerHTML = html;
+    })
+    .catch(e =&gt; console.log(e));
+</code></pre>
+
+
+    
+
+
+<div class="alert alert-info" role="alert">
+    To keep things simple, this code uses a static data file: rates.json. The application would work the same way with a URL pointing to a remote service.
+</div>
+
+
+    
+</li>
+
+<li><p>Open <code>webpack.config.js</code> in your code editor. In <code>module.exports</code>, modify the entry and output items as follows:</p>
+
+<pre><code class="language-javascript">entry: {
+    app: './js/main.js',
+    ratefinder: './js/ratefinder.js'
+},
+output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].bundle.js'
+},
+</code></pre>
+
+
+    
+
+
+<div class="alert alert-info" role="alert">
+    The <strong>webpack</strong> script will now compile two applications: <strong>main.js</strong> and <strong>ratefinder.js</strong>. It will create two compiled files based on the entry name: <strong>app.bundle.js</strong> and <strong>ratefinder.bundle.js</strong>.
+</div>
+
+
+    
+</li>
+
+<li><p>On the command line, type the following command to rebuild the application:</p>
+
+<pre><code class="language-bash">npm run webpack
+</code></pre></li>
+
+<li><p>Open a browser, access <a href="http://localhost:8080/ratefinder.html">http://localhost:8080/ratefinder.html</a>.</p></li>
+</ol>
+
+<h2 id="part-2-create-a-promise">Part 2: Create a Promise</h2>
+
+<p>Most of the time, all you&rsquo;ll have to do is use promises returned by built-in or third-party APIs. Sometimes, you may have to create your own promises as well. In this section you create a mock data service to familiarize yourself with the process of creating ECMAScript 6 promises. The mock data service uses an asynchronous API so that it can replace an actual asynchronous data service for test or other purpose.</p>
+
+<ol>
+<li><p>Create a new file named <code>rate-service-mock.js</code> in the <code>js</code> directory.</p></li>
+
+<li><p>In rate-service-mock.js.js, define a <code>rates</code> variable with some sample data:</p>
+
+<pre><code class="language-javascript">let rates = [
+    {
+        &quot;name&quot;: &quot;30 years fixed&quot;,
+        &quot;rate&quot;: &quot;13&quot;,
+        &quot;years&quot;: &quot;30&quot;
+    },
+    {
+        &quot;name&quot;: &quot;20 years fixed&quot;,
+        &quot;rate&quot;: &quot;2.8&quot;,
+        &quot;years&quot;: &quot;20&quot;
+    }
+];
+</code></pre></li>
+
+<li><p>Define a <code>findAll()</code> function implemented as follows:</p>
+
+<pre><code class="language-javascript">export let findAll = () =&gt; new Promise((resolve, reject) =&gt; {
+    if (rates) {
+        resolve(rates);
+    } else {
+        reject(&quot;No rates&quot;);
+    }
+});
+</code></pre></li>
+
+<li><p>Open <code>ratefinder.js</code>. Change the implementation as follows:</p>
+
+<pre><code class="language-javascript">import * as service from './rate-service-mock';
+    
+service.findAll()
+    .then(rates =&gt; {
+        let html = '';
+        rates.forEach(rate =&gt; html += `&lt;tr&gt;&lt;td&gt;${rate.name}&lt;/td&gt;&lt;td&gt;${rate.years}&lt;/td&gt;&lt;td&gt;${rate.rate}%&lt;/td&gt;&lt;/tr&gt;`);
+        document.getElementById(&quot;rates&quot;).innerHTML = html;
+    })
+    .catch(e =&gt; console.log(e));
+</code></pre></li>
+
+<li><p>On the command line, type the following command to rebuild the application:</p>
+
+<pre><code class="language-bash">npm run webpack
+</code></pre></li>
+
+<li><p>Open a browser, access <a href="http://localhost:8080/ratefinder.html">http://localhost:8080/ratefinder.html</a>.</p></li>
+</ol>
+
+<h2 id="additional-resources">Additional Resources</h2>
+
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN: Promise</a></li>
+<li><a href="http://www.2ality.com/2014/09/es6-promises-foundations.html">2ality: Promises</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">MDN: Fetch</a></li>
+</ul>
+
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+    
+    
+        
+            <div class="panel-heading">Topics</div>
+            <div class="list-group">
+                
+                <a class="list-group-item" href="/setup-babel/">Setting Up a Babel Project</a>
+                
+                <a class="list-group-item" href="/let/">Using let Variables</a>
+                
+                <a class="list-group-item" href="/destructuring/">Using Destructuring</a>
+                
+                <a class="list-group-item" href="/arrow-functions/">Using Arrow Functions</a>
+                
+                <a class="list-group-item" href="/setup-webpack/">Setting Up Webpack</a>
+                
+                <a class="list-group-item" href="/modules/">Using Modules</a>
+                
+                <a class="list-group-item" href="/classes/">Using Classes</a>
+                
+                <a class="list-group-item" href="/promises/">Using Promises</a>
+                
+            </div>
+        
+    
+</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div style="margin-top: 6px">
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://ccoenraets.github.io" data-text="ECMAScript 6 Data Tutorial by @ccoenraets #ECMAScript6 #REST #Promises #Babel #Webpack" data-size="large">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <a href="https://twitter.com/ccoenraets" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @ccoenraets</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            </div>
+            <div class="row" style="margin-top:20px;margin-bottom:20px">
+<div class="col-sm-12">
+
+
+    
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                
+                    
+                    
+                    <a href="/classes/" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+                
+                
+                
+            
+        
+    
+
+</div>
+</div>
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'es6tutorial';
+    var disqus_identifier = '\/promises\/';
+    var disqus_title = 'Using Promises';
+    var disqus_url = '\/promises\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <hr style="margin-top:30px;background: #EBEEEF"/>
+            <footer style="margin-top:20px;">
+                <p>Written by Christophe Coenraets (<a href="https://twitter.com/ccoenraets">@ccoenraets</a>), Developer Evangelist at <a href="http://developer.salesforce.com">Salesforce</a>.</p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/prism/prism.js"></script>
+
+</body>
+</html>
