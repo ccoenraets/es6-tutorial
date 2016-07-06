@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arrow-functions/index.html" afterPath="$PROJECT_DIR$/arrow-functions/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/index.html" afterPath="$PROJECT_DIR$/classes/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/destructuring/index.html" afterPath="$PROJECT_DIR$/destructuring/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/let/index.html" afterPath="$PROJECT_DIR$/let/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/index.html" afterPath="$PROJECT_DIR$/modules/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promises/index.html" afterPath="$PROJECT_DIR$/promises/index.html" />
@@ -295,7 +296,13 @@
       <option name="project" value="LOCAL" />
       <updated>1467823149633</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="edits">
+      <created>1467828006559</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1467828006559</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
