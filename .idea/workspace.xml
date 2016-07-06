@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8cc97c66-ac18-4ed5-aeaa-63cffe5a96de" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/microsite.css" afterPath="$PROJECT_DIR$/css/microsite.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/arrow-functions/index.html" afterPath="$PROJECT_DIR$/arrow-functions/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/index.html" afterPath="$PROJECT_DIR$/classes/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/destructuring/index.html" afterPath="$PROJECT_DIR$/destructuring/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.xml" afterPath="$PROJECT_DIR$/index.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/let/index.html" afterPath="$PROJECT_DIR$/let/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/index.html" afterPath="$PROJECT_DIR$/modules/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/promises/index.html" afterPath="$PROJECT_DIR$/promises/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup-babel/index.html" afterPath="$PROJECT_DIR$/setup-babel/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setup-webpack/index.html" afterPath="$PROJECT_DIR$/setup-webpack/index.html" />
     </list>
     <ignored path="es6-tutorial.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -272,14 +279,20 @@
       <option name="project" value="LOCAL" />
       <updated>1467822502262</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="edits">
+      <created>1467822680813</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1467822680813</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="2213" y="-313" width="1440" height="1212" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26458332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26458332" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />

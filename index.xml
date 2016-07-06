@@ -346,7 +346,7 @@
 
 &lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button. Open the developer console: you should see the amortization values in the console log.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ccoenraets.github.io/es6-tutorial/images/amortization-in-console.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;../images/amortization-in-console.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
@@ -605,7 +605,7 @@ var monthlyRate = mortgage.monthlyRate;
 
 &lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ccoenraets.github.io/es6-tutorial/images/calc-rate.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;&lt;img src=&#34;../images/calc-rate.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&#34;additional-resources&#34;&gt;Additional Resources&lt;/h2&gt;
@@ -921,7 +921,7 @@ service.findAll()
 
 &lt;li&gt;&lt;p&gt;Open a browser, access &lt;a href=&#34;http://localhost:8080&#34;&gt;http://localhost:8080&lt;/a&gt;, and click the &lt;strong&gt;Calculate&lt;/strong&gt; button: &lt;strong&gt;it doesn&amp;rsquo;t work&lt;/strong&gt;. Open the developer console. You should see a message similar to this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://ccoenraets.github.io/es6-tutorial/images/scope-error.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../images/scope-error.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This is because unlike &lt;code&gt;var&lt;/code&gt; variables which are &lt;strong&gt;function-scoped&lt;/strong&gt;, &lt;code&gt;let&lt;/code&gt; variables are &lt;strong&gt;block-scoped&lt;/strong&gt;: they only exist in the block they are defined in.&lt;/p&gt;&lt;/li&gt;
 
