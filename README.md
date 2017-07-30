@@ -30,6 +30,7 @@ This ES6 tutorial was originally developed by [ccoenraets](https://github.com/cc
 - Create a pull request
     + After you've pushed your changes to your fork, visit this repository again: https://github.com/CUNYTechPrep/es6-tutorial
     + Click on the "New pull request" button and fill out the necessary details
+        * **Important:** Make sure the _Base fork_ is `CUNYTechPrep/es6-tutorial`
     + CTP instructors will then be notified of your work and grade it via the pull request
     + For more details on pull requests see: https://help.github.com/articles/creating-a-pull-request-from-a-fork/
 
